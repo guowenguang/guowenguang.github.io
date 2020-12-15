@@ -8,15 +8,15 @@
   <link rel="dns-prefetch" href="http://example.com">
   <title>serlet知识点 | </title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、Servlet的生命周期1.从服务器开启的到服务器结束 2.从第一次调用到服务器关闭 注意：init方法是对Servlet的一个方法，会在Servlet方法第一个加载进行存储执行，destroy是在服务器销毁时执行，也就服务器关闭的时候。 2、service方法和doGet方法和doPost方法serivce 方法：​          可以处理doGet和doPost方法，但是有servic">
+  <meta name="description" content="1、Servlet的生命周期1.从服务器开启的到服务器结束 2.从第一次调用到服务器关闭 注意：init方法是对Servlet的一个方法，会在Servlet方法第一个加载进行存储执行，destroy是在服务器销毁时执行，也就服务器关闭的时候。 2、service方法和doGet方法和doPost方法serivce 方法：​          可以处理doGet和doPost方法，但是有serv">
 <meta property="og:type" content="article">
 <meta property="og:title" content="serlet知识点">
 <meta property="og:url" content="http://example.com/2020/12/15/Servlet%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
 <meta property="og:site_name">
-<meta property="og:description" content="1、Servlet的生命周期1.从服务器开启的到服务器结束 2.从第一次调用到服务器关闭 注意：init方法是对Servlet的一个方法，会在Servlet方法第一个加载进行存储执行，destroy是在服务器销毁时执行，也就服务器关闭的时候。 2、service方法和doGet方法和doPost方法serivce 方法：​          可以处理doGet和doPost方法，但是有servic">
+<meta property="og:description" content="1、Servlet的生命周期1.从服务器开启的到服务器结束 2.从第一次调用到服务器关闭 注意：init方法是对Servlet的一个方法，会在Servlet方法第一个加载进行存储执行，destroy是在服务器销毁时执行，也就服务器关闭的时候。 2、service方法和doGet方法和doPost方法serivce 方法：​          可以处理doGet和doPost方法，但是有serv">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2020-12-15T11:44:11.000Z">
-<meta property="article:modified_time" content="2020-12-15T11:46:18.157Z">
+<meta property="article:modified_time" content="2020-12-15T12:11:44.974Z">
 <meta property="article:author" content="小生">
 <meta name="twitter:card" content="summary">
   
@@ -182,7 +182,9 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1、Servlet的生命周期"><a href="#1、Servlet的生命周期" class="headerlink" title="1、Servlet的生命周期"></a>1、<strong>Servlet的生命周期</strong></h3><p>1.从服务器开启的到服务器结束</p>
+        <details>
+
+<h3 id="1、Servlet的生命周期"><a href="#1、Servlet的生命周期" class="headerlink" title="1、Servlet的生命周期"></a>1、<strong>Servlet的生命周期</strong></h3><p>1.从服务器开启的到服务器结束</p>
 <p>2.从第一次调用到服务器关闭</p>
 <p><strong>注意</strong>：<strong>init方法是对Servlet的一个方法，会在Servlet方法第一个加载进行存储执行，destroy是在服务器销毁时执行，也就服务器关闭的时候。</strong></p>
 <h3 id="2、service方法和doGet方法和doPost方法"><a href="#2、service方法和doGet方法和doPost方法" class="headerlink" title="2、service方法和doGet方法和doPost方法"></a>2、<strong>service方法和doGet方法和doPost方法</strong></h3><h5 id="serivce-方法："><a href="#serivce-方法：" class="headerlink" title="serivce 方法："></a>serivce 方法：</h5><p>​          可以处理doGet和doPost方法，但是有service方法会优先执行service方法再执行deGet和doPost方法</p>
@@ -246,7 +248,7 @@
 <p>地址栏是否改变             不变                                    改变</p>
 <p>是否保留第一次的数据       保留                                不保留</p>
 <p>请求的次数                         1                                        2</p>
-
+</details>
       
 
       

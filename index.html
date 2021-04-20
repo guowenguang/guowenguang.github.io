@@ -160,6 +160,84 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-邮件发送" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/20/%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/">邮件发送</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/20/%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/" class="archive-article-date">
+  	<time datetime="2021-04-20T11:38:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <details>
+    ## 邮件发送
+
+
+<h4 id="1、首先要导入依赖"><a href="#1、首先要导入依赖" class="headerlink" title="1、首先要导入依赖"></a>1、首先要导入依赖</h4><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-mail&lt;/artifactId&gt;</span><br><span class="line"> &lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="2、在配置文件中，配置该配置"><a href="#2、在配置文件中，配置该配置" class="headerlink" title="2、在配置文件中，配置该配置"></a>2、在配置文件中，配置该配置</h4><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">spring.mail.username</span>=<span class="string">2353467122@qq.com</span></span><br><span class="line"><span class="meta">spring.mail.password</span>=<span class="string">这里填写你的邮箱授权码</span></span><br><span class="line"><span class="meta">spring.mail.host</span>=<span class="string">smtp.qq.com</span></span><br><span class="line"><span class="comment">#qq需要配置ssl</span></span><br><span class="line"><span class="meta">spring.mail.properties.mail.smtp.ssl.enable</span>=<span class="string">true</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>找到qq邮箱的设置，在开启pop3/smtp服务，再生成授权码</p>
+<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210322140542316.png" alt="image-20210322140542316"></p>
+<p>在测试类中填写邮件发送代码</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@SpringBootTest</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">SendMailApplicationTests</span> </span>&#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    JavaMailSenderImpl mailSender;</span><br><span class="line">    <span class="meta">@Test</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">contextLoads</span><span class="params">()</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置一个简单的邮件</span></span><br><span class="line">        SimpleMailMessage mailMessage = <span class="keyword">new</span> SimpleMailMessage();</span><br><span class="line">        mailMessage.setSubject(<span class="string">&quot;早上好鸭~！&quot;</span>);</span><br><span class="line">        mailMessage.setText(<span class="string">&quot;祝你快乐生活每一天&quot;</span>);</span><br><span class="line">        mailMessage.setTo(<span class="string">&quot;xxxxxx@qq.com&quot;</span>);</span><br><span class="line">       <span class="comment">// mailMessage.setTo(&quot;2353467122@qq.com&quot;);</span></span><br><span class="line">        mailMessage.setFrom(<span class="string">&quot;2353467122@qq.com&quot;</span>);</span><br><span class="line">        mailSender.send(mailMessage);</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">contextLoad2</span><span class="params">()</span> <span class="keyword">throws</span> MessagingException </span>&#123;</span><br><span class="line">    <span class="comment">//设置一个复杂的邮件</span></span><br><span class="line">    MimeMessage mimeMessage = mailSender.createMimeMessage();</span><br><span class="line">    MimeMessageHelper messageHelper = <span class="keyword">new</span> MimeMessageHelper(mimeMessage, <span class="keyword">true</span>);</span><br><span class="line">    messageHelper.setText(<span class="string">&quot;&lt;p style=&#x27;color:red&#x27;&gt;豪猪，你好呀！&lt;/p&gt;&quot;</span>,<span class="keyword">true</span>);</span><br><span class="line">    <span class="comment">//发送附件</span></span><br><span class="line">    messageHelper.addAttachment(<span class="string">&quot;1.jpg&quot;</span>,<span class="keyword">new</span> File(<span class="string">&quot;C:\\Users\\Administrator\\Desktop\\g.jpg&quot;</span>));</span><br><span class="line">    messageHelper.addAttachment(<span class="string">&quot;2.jpg&quot;</span>,<span class="keyword">new</span> File(<span class="string">&quot;C:\\Users\\Administrator\\Desktop\\g.jpg&quot;</span>));</span><br><span class="line">    messageHelper.setSubject(<span class="string">&quot;身体健康，万事如意&quot;</span>);</span><br><span class="line">    messageHelper.setTo(<span class="string">&quot;xxxxxx@qq.com&quot;</span>);</span><br><span class="line">    messageHelper.setFrom(<span class="string">&quot;2353467122@qq.com&quot;</span>);</span><br><span class="line">    mailSender.send(mimeMessage);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/20/%E9%82%AE%E4%BB%B6%E5%8F%91%E9%80%81/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-Linux基本命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -898,139 +976,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/12/15/Servlet%E7%9F%A5%E8%AF%86%E7%82%B9/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-    <article id="post-Cookie和Session的性质和方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/15/Cookie%E5%92%8CSession%E7%9A%84%E6%80%A7%E8%B4%A8%E5%92%8C%E6%96%B9%E6%B3%95/">Cookie和Session的性质和方法</a>
-    </h1>
-  
-
-        
-        <a href="/2020/12/15/Cookie%E5%92%8CSession%E7%9A%84%E6%80%A7%E8%B4%A8%E5%92%8C%E6%96%B9%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-12-15T11:41:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <details>
-
-<h3 id="1、Cookie的方法："><a href="#1、Cookie的方法：" class="headerlink" title="1、Cookie的方法："></a>1、<strong>Cookie的方法：</strong></h3><p>Cookie:   key(name) =value</p>
-<p>在javax.servlet.http.Cookie包中</p>
-<p>自带构造方法：public Cookie(String name,String value){</p>
-<p>}</p>
-<p>String    getName:获取name</p>
-<p>String    getValue :获取value</p>
-<p>void   setMaxAge(int  expiry);表示的是最大的有效期（秒）</p>
-<p>是服务端准备Cookie：</p>
-<pre><code>           response.addCookie(Cookie cookie);</code></pre>
-<p>页面跳转 （请求转发，重定向）；</p>
-<p>客户端获取cookie  ：request.getCookies();</p>
-<p>1.服务端增加Cookie：response对象 ；客户端获取对象：request对象</p>
-<p>2.不能直接获取某一个单独对象，只能一次性将全部的Cookie拿到（Cookie[]  cookies =request.getCookies();）</p>
-<p>3.使用Cookie尽量使用英文数字，如果使用中文要进行编码、解码</p>
-<h3 id="2、Session的性质"><a href="#2、Session的性质" class="headerlink" title="2、Session的性质"></a>2、<strong>Session的性质</strong></h3><p>session是会话的意思</p>
-<p>a.浏览网站：开始—–关闭</p>
-<p>b.购物、浏览、付款</p>
-<p>开始到结束</p>
-<h3 id="3、session机制"><a href="#3、session机制" class="headerlink" title="3、session机制"></a>3、<strong>session机制</strong></h3><p>​        客户端第一次请求服务器时，服务器会自动产生一个session对象（用于保存客户的信息），</p>
-<p>​        并且每个session对象都会有一个唯一的SessionID（用于区分其他session）；</p>
-<p>​        服务端会产生一个cookie，并且该cookie的name=JSESSIONID，value=服务器sessionID的值；</p>
-<p>​        然后 服务器会在相应客户端的同时 将该cookie发送给客户端，至此客户端就有cookie（JSESSIONId）</p>
-<p>​        因此客户端的cookie就可以和服务端session一一对应（JSEESION —-session）</p>
-<p>session：</p>
-<p>​        a.session存储在服务端</p>
-<p>​        b.session 是在同一个用户（客户）请求时 共享数据</p>
-<p>​        c. <strong>session机制：第一次客户请求时产生一个sessionID 并赋值给cookie的 jsessionid，然后发送给客户端</strong></p>
-<h3 id="4、session的方法"><a href="#4、session的方法" class="headerlink" title="4、session的方法"></a>4、<strong>session的方法</strong></h3><p>​    String    getId()   获取sessionId</p>
-<p>​    boolean isNew()   判断是否是新用户（第一次访问）</p>
-<p>​    void invalidate()    使session失效     （退出登录、注销）</p>
-<p>​    setAttribute()    //是将username保存在session中</p>
-<p>​    getAttribute()   //取得（获得这个对象.。）   返回值是Object</p>
-<p>​    </p>
-<p>​    void setMaxInanctiveInterval(秒)：设置最大有效 非活动时间</p>
-<p>​    int  getMaxInactiveInteral() :获取最大有效 非活动时间</p>
-<h3 id="5、cookie和session的区别："><a href="#5、cookie和session的区别：" class="headerlink" title="5、cookie和session的区别："></a>5、<strong>cookie和session的区别：</strong></h3><p>​                                session                         cookie</p>
-<p>保存的位置                服务器                        客户端</p>
-<p>安全性                        安全                            较不安全</p>
-<p>保存的内容                Object                            String</p>
-<p><strong>jsp的九大内置对象</strong></p>
-<p> 1.pageContext   JSP页面容器</p>
-<p>2.request  请求对象</p>
-<p>3.response        响应对象</p>
-<p>4.session             会话对象</p>
-<p>5.appliation        全局对象</p>
-<p>6.config            配置对象</p>
-<p>7.out                输出对象</p>
-<p>8.page                 当前JSP页面对象（相当于java中this）</p>
-<p>9.excepetion         异常对象</p>
-<p><strong>四种范围对象（小—–》大）</strong></p>
-<p> 1.pageContext   JSP页面容器</p>
-<p>2.request  请求对象</p>
-<p>3.response        响应对象</p>
-<p>4.session             会话对象</p>
-<p><strong>以上有四个对象共有的方法：</strong></p>
-<p>​            Object getAttribute(String name) : 根据属性名，或者属性值</p>
-<p>​            void   setAttribute(String name,Object obj )    :设置属性值（新增，修改） </p>
-<p>​            void    removeAttribute(String name) : 根据属性名，删除对象</p>
-<p>a.</p>
-<p>pageContext   当前页面有效   （页面跳转后无效）</p>
-<p>b.</p>
-<p>request       同一次请求有效，其他请求无效（请求转发后有效，重定向无效，因为他要请求两次）</p>
-<p>c.</p>
-<p>session            同一次会话有效    （无论怎么跳转，都有效，关闭/切换浏览器后无效 ；从登陆到退出）</p>
-<p>d.</p>
-<p>application            全局变量：整个浏览器都有效，其他浏览器也有效；；；；；关闭服务器和在其他项目中无效</p>
-<ol>
-<li>以上的4个范围对象，通过setAttribute（）赋值 ，通过getAttribute() 取值</li>
-<li>以上范围对象，尽量使用最小的范围。因为对象的范围越大，造成的性能损耗越高</li>
-</ol>
-</details>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/15/Cookie%E5%92%8CSession%E7%9A%84%E6%80%A7%E8%B4%A8%E5%92%8C%E6%96%B9%E6%B3%95/">展开全文 >></a>
         </p>
       
 

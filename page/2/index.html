@@ -160,6 +160,139 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Cookie和Session的性质和方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/15/Cookie%E5%92%8CSession%E7%9A%84%E6%80%A7%E8%B4%A8%E5%92%8C%E6%96%B9%E6%B3%95/">Cookie和Session的性质和方法</a>
+    </h1>
+  
+
+        
+        <a href="/2020/12/15/Cookie%E5%92%8CSession%E7%9A%84%E6%80%A7%E8%B4%A8%E5%92%8C%E6%96%B9%E6%B3%95/" class="archive-article-date">
+  	<time datetime="2020-12-15T11:41:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <details>
+
+<h3 id="1、Cookie的方法："><a href="#1、Cookie的方法：" class="headerlink" title="1、Cookie的方法："></a>1、<strong>Cookie的方法：</strong></h3><p>Cookie:   key(name) =value</p>
+<p>在javax.servlet.http.Cookie包中</p>
+<p>自带构造方法：public Cookie(String name,String value){</p>
+<p>}</p>
+<p>String    getName:获取name</p>
+<p>String    getValue :获取value</p>
+<p>void   setMaxAge(int  expiry);表示的是最大的有效期（秒）</p>
+<p>是服务端准备Cookie：</p>
+<pre><code>           response.addCookie(Cookie cookie);</code></pre>
+<p>页面跳转 （请求转发，重定向）；</p>
+<p>客户端获取cookie  ：request.getCookies();</p>
+<p>1.服务端增加Cookie：response对象 ；客户端获取对象：request对象</p>
+<p>2.不能直接获取某一个单独对象，只能一次性将全部的Cookie拿到（Cookie[]  cookies =request.getCookies();）</p>
+<p>3.使用Cookie尽量使用英文数字，如果使用中文要进行编码、解码</p>
+<h3 id="2、Session的性质"><a href="#2、Session的性质" class="headerlink" title="2、Session的性质"></a>2、<strong>Session的性质</strong></h3><p>session是会话的意思</p>
+<p>a.浏览网站：开始—–关闭</p>
+<p>b.购物、浏览、付款</p>
+<p>开始到结束</p>
+<h3 id="3、session机制"><a href="#3、session机制" class="headerlink" title="3、session机制"></a>3、<strong>session机制</strong></h3><p>​        客户端第一次请求服务器时，服务器会自动产生一个session对象（用于保存客户的信息），</p>
+<p>​        并且每个session对象都会有一个唯一的SessionID（用于区分其他session）；</p>
+<p>​        服务端会产生一个cookie，并且该cookie的name=JSESSIONID，value=服务器sessionID的值；</p>
+<p>​        然后 服务器会在相应客户端的同时 将该cookie发送给客户端，至此客户端就有cookie（JSESSIONId）</p>
+<p>​        因此客户端的cookie就可以和服务端session一一对应（JSEESION —-session）</p>
+<p>session：</p>
+<p>​        a.session存储在服务端</p>
+<p>​        b.session 是在同一个用户（客户）请求时 共享数据</p>
+<p>​        c. <strong>session机制：第一次客户请求时产生一个sessionID 并赋值给cookie的 jsessionid，然后发送给客户端</strong></p>
+<h3 id="4、session的方法"><a href="#4、session的方法" class="headerlink" title="4、session的方法"></a>4、<strong>session的方法</strong></h3><p>​    String    getId()   获取sessionId</p>
+<p>​    boolean isNew()   判断是否是新用户（第一次访问）</p>
+<p>​    void invalidate()    使session失效     （退出登录、注销）</p>
+<p>​    setAttribute()    //是将username保存在session中</p>
+<p>​    getAttribute()   //取得（获得这个对象.。）   返回值是Object</p>
+<p>​    </p>
+<p>​    void setMaxInanctiveInterval(秒)：设置最大有效 非活动时间</p>
+<p>​    int  getMaxInactiveInteral() :获取最大有效 非活动时间</p>
+<h3 id="5、cookie和session的区别："><a href="#5、cookie和session的区别：" class="headerlink" title="5、cookie和session的区别："></a>5、<strong>cookie和session的区别：</strong></h3><p>​                                session                         cookie</p>
+<p>保存的位置                服务器                        客户端</p>
+<p>安全性                        安全                            较不安全</p>
+<p>保存的内容                Object                            String</p>
+<p><strong>jsp的九大内置对象</strong></p>
+<p> 1.pageContext   JSP页面容器</p>
+<p>2.request  请求对象</p>
+<p>3.response        响应对象</p>
+<p>4.session             会话对象</p>
+<p>5.appliation        全局对象</p>
+<p>6.config            配置对象</p>
+<p>7.out                输出对象</p>
+<p>8.page                 当前JSP页面对象（相当于java中this）</p>
+<p>9.excepetion         异常对象</p>
+<p><strong>四种范围对象（小—–》大）</strong></p>
+<p> 1.pageContext   JSP页面容器</p>
+<p>2.request  请求对象</p>
+<p>3.response        响应对象</p>
+<p>4.session             会话对象</p>
+<p><strong>以上有四个对象共有的方法：</strong></p>
+<p>​            Object getAttribute(String name) : 根据属性名，或者属性值</p>
+<p>​            void   setAttribute(String name,Object obj )    :设置属性值（新增，修改） </p>
+<p>​            void    removeAttribute(String name) : 根据属性名，删除对象</p>
+<p>a.</p>
+<p>pageContext   当前页面有效   （页面跳转后无效）</p>
+<p>b.</p>
+<p>request       同一次请求有效，其他请求无效（请求转发后有效，重定向无效，因为他要请求两次）</p>
+<p>c.</p>
+<p>session            同一次会话有效    （无论怎么跳转，都有效，关闭/切换浏览器后无效 ；从登陆到退出）</p>
+<p>d.</p>
+<p>application            全局变量：整个浏览器都有效，其他浏览器也有效；；；；；关闭服务器和在其他项目中无效</p>
+<ol>
+<li>以上的4个范围对象，通过setAttribute（）赋值 ，通过getAttribute() 取值</li>
+<li>以上范围对象，尽量使用最小的范围。因为对象的范围越大，造成的性能损耗越高</li>
+</ol>
+</details>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/12/15/Cookie%E5%92%8CSession%E7%9A%84%E6%80%A7%E8%B4%A8%E5%92%8C%E6%96%B9%E6%B3%95/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-java知识点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

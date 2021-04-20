@@ -160,6 +160,133 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Servlet知识点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/15/Servlet%E7%9F%A5%E8%AF%86%E7%82%B9/">serlet知识点</a>
+    </h1>
+  
+
+        
+        <a href="/2020/12/15/Servlet%E7%9F%A5%E8%AF%86%E7%82%B9/" class="archive-article-date">
+  	<time datetime="2020-12-15T11:44:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-15</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <details>
+
+<h3 id="1、Servlet的生命周期"><a href="#1、Servlet的生命周期" class="headerlink" title="1、Servlet的生命周期"></a>1、<strong>Servlet的生命周期</strong></h3><p>1.从服务器开启的到服务器结束</p>
+<p>2.从第一次调用到服务器关闭</p>
+<p><strong>注意</strong>：<strong>init方法是对Servlet的一个方法，会在Servlet方法第一个加载进行存储执行，destroy是在服务器销毁时执行，也就服务器关闭的时候。</strong></p>
+<h3 id="2、service方法和doGet方法和doPost方法"><a href="#2、service方法和doGet方法和doPost方法" class="headerlink" title="2、service方法和doGet方法和doPost方法"></a>2、<strong>service方法和doGet方法和doPost方法</strong></h3><h5 id="serivce-方法："><a href="#serivce-方法：" class="headerlink" title="serivce 方法："></a>serivce 方法：</h5><p>​          可以处理doGet和doPost方法，但是有service方法会优先执行service方法再执行deGet和doPost方法</p>
+<h5 id="doGet方法："><a href="#doGet方法：" class="headerlink" title="doGet方法："></a>doGet方法：</h5><p>​         处理get方法</p>
+<h5 id="doPost方法："><a href="#doPost方法：" class="headerlink" title="doPost方法："></a>doPost方法：</h5><p>​        处理Post方法</p>
+<p><strong>注意</strong>：当service方法中覆写了super.service（req,resq）会先执行serivce方法在来执行doGet方法和doPost方法，如果doGet方法和doPost方法没有就会报<strong>405</strong>，但serivce方法还是会执行，<strong>因此，在serivce方法中最好不好写</strong>super.service(req,resq),写了就要写doGet和doPost。</p>
+<h3 id="3、req的方法"><a href="#3、req的方法" class="headerlink" title="3、req的方法"></a>3、<strong>req的方法</strong></h3><p>1.req.getMethod();  //获取请求的方法（post，get）</p>
+<p>2.req.getRequestURL();  //获取请求的URL</p>
+<p>3.req.getRequestrURI()  //获取请求的URI</p>
+<p>4.req.getScheme(); // 获取协议</p>
+<p>5.req.getHeader(“键名”);  //返回指定的请求头信息</p>
+<p>6.req.getHeaderName(); //返回请求头键名的的枚举集合</p>
+<p>7.req.getParameter(“键名”) //获取用户指定的信息（获取请求信息）</p>
+<p>8.re1.getParameterValues(“键名”) //返回同键不用值的请求数据，例如：（都选），返回数组</p>
+<h3 id="4、Servlet获取请求信息"><a href="#4、Servlet获取请求信息" class="headerlink" title="4、Servlet获取请求信息"></a>4、<strong>Servlet获取请求信息</strong></h3><p>//设置请求编码格式</p>
+<p>//获取响应的编码格式</p>
+<p>//获取用户信息</p>
+<p>//处理请求结果</p>
+<p>//处理响应结果</p>
+<p><strong>resp的方法</strong></p>
+<p>1.resp.setHeader();   //设置响应头，这个方法重写会被覆盖</p>
+<p>2.resp.addHeader();  //设置响应头，这个方法重写不会被覆盖</p>
+<p>3.resp.contentType(“text/html;charest= utf-8”)  //设置响应的编码</p>
+<p>4.resp.writer().write(“”)  //设置相应实体（响应处理结果）</p>
+<h3 id="5、请求乱码问题解决："><a href="#5、请求乱码问题解决：" class="headerlink" title="5、请求乱码问题解决："></a>5、<strong>请求乱码问题解决：</strong></h3><p>使用String进行重新编码(必用重用也比较同用)</p>
+<p>​     <strong>uname =new  String(uname.getBytes(“iso8859-1”),”utf-8”);</strong></p>
+<p>Get方式请求：</p>
+<p>​     第一步<strong>：req.setCharacterEncoding(“utf-8”);</strong></p>
+<p>​      第二步：在tomcat服务器目录下的conf文件下找到service.xml文件，打开进行</p>
+<p>如下配置：</p>
+<pre><code>    &lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;
+           connectionTimeout=&quot;20000&quot;
+           redirectPort=&quot;8443&quot; useBodyEncodingForURI=&quot;ture&quot;/&gt;</code></pre>
+<p>Post请求方法：</p>
+<p>​        <strong>req.setCharacterEncoding(“utf-8”);</strong></p>
+<p><strong>数据流转过程：</strong></p>
+<p>​    浏览器——-》服务器——-》数据库（发送请求过程）</p>
+<p>​    数据库——-》服务器——–》浏览器（响应处理结果）</p>
+<p><strong>请求转发学习：</strong>（只发送一次请求给服务器）</p>
+<p>​        作用：实现多个servlet联动操作来处理请求，这样避免代码冗余，让servlet的职责更加明确。</p>
+<p>使用：</p>
+<p>​            <strong>req.getRequestDispatcher(“要转发的地址”).forward(req,resp);</strong></p>
+<p>​            <strong>转发的地址是servlet的别名</strong></p>
+<p><strong>特点：</strong></p>
+<p>​            一次请求，浏览器地址栏信息不改变。</p>
+<p>注意：</p>
+<p>​        请求转发后的直接return结束就可以了。</p>
+<p><strong>reuqet作用域</strong></p>
+<p>​        解决一次请求内的servlet的数据共享问题</p>
+<p><strong>重定向</strong>（向服务器发送两次请求）</p>
+<p>​        解决了表单重复提交的问题，以及当前servlet无法请求的问题。</p>
+<p>​    使用：</p>
+<p>​            resp.sendRedirect(String uri);</p>
+<p>​    特点：</p>
+<p>​            两次请求，两个request对象。</p>
+<p>​            浏览器地址栏信息改变</p>
+<p>时机：</p>
+<p>​            如果请求中有表单数据，而数据又比较重要，不能重复提交，建议使用重定向。</p>
+<p>​            如果请求被servlet接收后，无法进行处理，建议使用重定向定位到处理的资源里面。</p>
+<h3 id="6、请求转发和重定向的区别："><a href="#6、请求转发和重定向的区别：" class="headerlink" title="6、请求转发和重定向的区别："></a>6、<strong>请求转发和重定向的区别：</strong></h3><p>​                                    请求转发                             重定向</p>
+<p>地址栏是否改变             不变                                    改变</p>
+<p>是否保留第一次的数据       保留                                不保留</p>
+<p>请求的次数                         1                                        2</p>
+</details>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/12/15/Servlet%E7%9F%A5%E8%AF%86%E7%82%B9/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-Cookie和Session的性质和方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     

@@ -6,19 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>serlet知识点 | 小生</title>
+  <title>shior | 小生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、Servlet的生命周期1.从服务器开启的到服务器结束 2.从第一次调用到服务器关闭 注意：init方法是对Servlet的一个方法，会在Servlet方法第一个加载进行存储执行，destroy是在服务器销毁时执行，也就服务器关闭的时候。 2、service方法和doGet方法和doPost方法serivce 方法：​          可以处理doGet和doPost方法，但是有serv">
+  <meta name="description" content="shior使用shior的好处：认证，授权，加密，会话管理remeber me(记住我) 功能相当于一个sessionShiro的架构有3个主要的概念：Subject，SecurityManager 和 Realm Subject:即“表示当前操作用户”依赖12345&lt;dependency&gt;   &lt;groupId&gt;org.apache.shiro&lt;&#x2F;groupId">
 <meta property="og:type" content="article">
-<meta property="og:title" content="serlet知识点">
-<meta property="og:url" content="http://yoursite.com/2020/12/15/Servlet%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
+<meta property="og:title" content="shior">
+<meta property="og:url" content="http://yoursite.com/2021/04/20/shior/index.html">
 <meta property="og:site_name" content="小生">
-<meta property="og:description" content="1、Servlet的生命周期1.从服务器开启的到服务器结束 2.从第一次调用到服务器关闭 注意：init方法是对Servlet的一个方法，会在Servlet方法第一个加载进行存储执行，destroy是在服务器销毁时执行，也就服务器关闭的时候。 2、service方法和doGet方法和doPost方法serivce 方法：​          可以处理doGet和doPost方法，但是有serv">
+<meta property="og:description" content="shior使用shior的好处：认证，授权，加密，会话管理remeber me(记住我) 功能相当于一个sessionShiro的架构有3个主要的概念：Subject，SecurityManager 和 Realm Subject:即“表示当前操作用户”依赖12345&lt;dependency&gt;   &lt;groupId&gt;org.apache.shiro&lt;&#x2F;groupId">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-12-15T11:44:11.000Z">
-<meta property="article:modified_time" content="2020-12-15T12:11:44.974Z">
+<meta property="og:image" content="https://pic4.zhimg.com/80/v2-a6556dacd3f54be22f0573e8fa75399b_720w.jpg">
+<meta property="article:published_time" content="2021-04-20T10:02:59.000Z">
+<meta property="article:modified_time" content="2021-04-20T10:05:09.420Z">
 <meta property="article:author" content="小郭">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic4.zhimg.com/80/v2-a6556dacd3f54be22f0573e8fa75399b_720w.jpg">
   
     <link rel="alternative" href="/atom.xml" title="小生" type="application/atom+xml">
   
@@ -162,20 +164,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Servlet知识点" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-shior" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      serlet知识点
+      shior
     </h1>
   
 
         
-        <a href="/2020/12/15/Servlet%E7%9F%A5%E8%AF%86%E7%82%B9/" class="archive-article-date">
-  	<time datetime="2020-12-15T11:44:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-15</time>
+        <a href="/2021/04/20/shior/" class="archive-article-date">
+  	<time datetime="2021-04-20T10:02:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-20</time>
 </a>
         
       </header>
@@ -184,70 +186,19 @@
       
         <details>
 
-<h3 id="1、Servlet的生命周期"><a href="#1、Servlet的生命周期" class="headerlink" title="1、Servlet的生命周期"></a>1、<strong>Servlet的生命周期</strong></h3><p>1.从服务器开启的到服务器结束</p>
-<p>2.从第一次调用到服务器关闭</p>
-<p><strong>注意</strong>：<strong>init方法是对Servlet的一个方法，会在Servlet方法第一个加载进行存储执行，destroy是在服务器销毁时执行，也就服务器关闭的时候。</strong></p>
-<h3 id="2、service方法和doGet方法和doPost方法"><a href="#2、service方法和doGet方法和doPost方法" class="headerlink" title="2、service方法和doGet方法和doPost方法"></a>2、<strong>service方法和doGet方法和doPost方法</strong></h3><h5 id="serivce-方法："><a href="#serivce-方法：" class="headerlink" title="serivce 方法："></a>serivce 方法：</h5><p>​          可以处理doGet和doPost方法，但是有service方法会优先执行service方法再执行deGet和doPost方法</p>
-<h5 id="doGet方法："><a href="#doGet方法：" class="headerlink" title="doGet方法："></a>doGet方法：</h5><p>​         处理get方法</p>
-<h5 id="doPost方法："><a href="#doPost方法：" class="headerlink" title="doPost方法："></a>doPost方法：</h5><p>​        处理Post方法</p>
-<p><strong>注意</strong>：当service方法中覆写了super.service（req,resq）会先执行serivce方法在来执行doGet方法和doPost方法，如果doGet方法和doPost方法没有就会报<strong>405</strong>，但serivce方法还是会执行，<strong>因此，在serivce方法中最好不好写</strong>super.service(req,resq),写了就要写doGet和doPost。</p>
-<h3 id="3、req的方法"><a href="#3、req的方法" class="headerlink" title="3、req的方法"></a>3、<strong>req的方法</strong></h3><p>1.req.getMethod();  //获取请求的方法（post，get）</p>
-<p>2.req.getRequestURL();  //获取请求的URL</p>
-<p>3.req.getRequestrURI()  //获取请求的URI</p>
-<p>4.req.getScheme(); // 获取协议</p>
-<p>5.req.getHeader(“键名”);  //返回指定的请求头信息</p>
-<p>6.req.getHeaderName(); //返回请求头键名的的枚举集合</p>
-<p>7.req.getParameter(“键名”) //获取用户指定的信息（获取请求信息）</p>
-<p>8.re1.getParameterValues(“键名”) //返回同键不用值的请求数据，例如：（都选），返回数组</p>
-<h3 id="4、Servlet获取请求信息"><a href="#4、Servlet获取请求信息" class="headerlink" title="4、Servlet获取请求信息"></a>4、<strong>Servlet获取请求信息</strong></h3><p>//设置请求编码格式</p>
-<p>//获取响应的编码格式</p>
-<p>//获取用户信息</p>
-<p>//处理请求结果</p>
-<p>//处理响应结果</p>
-<p><strong>resp的方法</strong></p>
-<p>1.resp.setHeader();   //设置响应头，这个方法重写会被覆盖</p>
-<p>2.resp.addHeader();  //设置响应头，这个方法重写不会被覆盖</p>
-<p>3.resp.contentType(“text/html;charest= utf-8”)  //设置响应的编码</p>
-<p>4.resp.writer().write(“”)  //设置相应实体（响应处理结果）</p>
-<h3 id="5、请求乱码问题解决："><a href="#5、请求乱码问题解决：" class="headerlink" title="5、请求乱码问题解决："></a>5、<strong>请求乱码问题解决：</strong></h3><p>使用String进行重新编码(必用重用也比较同用)</p>
-<p>​     <strong>uname =new  String(uname.getBytes(“iso8859-1”),”utf-8”);</strong></p>
-<p>Get方式请求：</p>
-<p>​     第一步<strong>：req.setCharacterEncoding(“utf-8”);</strong></p>
-<p>​      第二步：在tomcat服务器目录下的conf文件下找到service.xml文件，打开进行</p>
-<p>如下配置：</p>
-<pre><code>    &lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;
-           connectionTimeout=&quot;20000&quot;
-           redirectPort=&quot;8443&quot; useBodyEncodingForURI=&quot;ture&quot;/&gt;</code></pre>
-<p>Post请求方法：</p>
-<p>​        <strong>req.setCharacterEncoding(“utf-8”);</strong></p>
-<p><strong>数据流转过程：</strong></p>
-<p>​    浏览器——-》服务器——-》数据库（发送请求过程）</p>
-<p>​    数据库——-》服务器——–》浏览器（响应处理结果）</p>
-<p><strong>请求转发学习：</strong>（只发送一次请求给服务器）</p>
-<p>​        作用：实现多个servlet联动操作来处理请求，这样避免代码冗余，让servlet的职责更加明确。</p>
-<p>使用：</p>
-<p>​            <strong>req.getRequestDispatcher(“要转发的地址”).forward(req,resp);</strong></p>
-<p>​            <strong>转发的地址是servlet的别名</strong></p>
-<p><strong>特点：</strong></p>
-<p>​            一次请求，浏览器地址栏信息不改变。</p>
-<p>注意：</p>
-<p>​        请求转发后的直接return结束就可以了。</p>
-<p><strong>reuqet作用域</strong></p>
-<p>​        解决一次请求内的servlet的数据共享问题</p>
-<p><strong>重定向</strong>（向服务器发送两次请求）</p>
-<p>​        解决了表单重复提交的问题，以及当前servlet无法请求的问题。</p>
-<p>​    使用：</p>
-<p>​            resp.sendRedirect(String uri);</p>
-<p>​    特点：</p>
-<p>​            两次请求，两个request对象。</p>
-<p>​            浏览器地址栏信息改变</p>
-<p>时机：</p>
-<p>​            如果请求中有表单数据，而数据又比较重要，不能重复提交，建议使用重定向。</p>
-<p>​            如果请求被servlet接收后，无法进行处理，建议使用重定向定位到处理的资源里面。</p>
-<h3 id="6、请求转发和重定向的区别："><a href="#6、请求转发和重定向的区别：" class="headerlink" title="6、请求转发和重定向的区别："></a>6、<strong>请求转发和重定向的区别：</strong></h3><p>​                                    请求转发                             重定向</p>
-<p>地址栏是否改变             不变                                    改变</p>
-<p>是否保留第一次的数据       保留                                不保留</p>
-<p>请求的次数                         1                                        2</p>
+<h1 id="shior"><a href="#shior" class="headerlink" title="shior"></a>shior</h1><h3 id="使用shior的好处："><a href="#使用shior的好处：" class="headerlink" title="使用shior的好处："></a>使用shior的好处：</h3><h4 id="认证，授权，加密，会话管理"><a href="#认证，授权，加密，会话管理" class="headerlink" title="认证，授权，加密，会话管理"></a>认证，授权，加密，会话管理</h4><h3 id="remeber-me-记住我-功能相当于一个session"><a href="#remeber-me-记住我-功能相当于一个session" class="headerlink" title="remeber me(记住我) 功能相当于一个session"></a>remeber me(记住我) 功能相当于一个session</h3><h3 id="Shiro的架构有3个主要的概念：Subject，SecurityManager-和-Realm"><a href="#Shiro的架构有3个主要的概念：Subject，SecurityManager-和-Realm" class="headerlink" title="Shiro的架构有3个主要的概念：Subject，SecurityManager 和 Realm"></a>Shiro的架构有3个主要的概念：Subject，SecurityManager 和 Realm</h3><p><img src="https://pic4.zhimg.com/80/v2-a6556dacd3f54be22f0573e8fa75399b_720w.jpg" alt="img"></p>
+<h4 id="Subject-即“表示当前操作用户”"><a href="#Subject-即“表示当前操作用户”" class="headerlink" title="Subject:即“表示当前操作用户”"></a>Subject:即“表示当前操作用户”</h4><h5 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.shiro<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>shiro-spring<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="使用shiro功能，我们首先要创建Realm对象"><a href="#使用shiro功能，我们首先要创建Realm对象" class="headerlink" title="使用shiro功能，我们首先要创建Realm对象"></a>使用shiro功能，我们首先要创建Realm对象</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserRealm</span> <span class="keyword">extends</span> <span class="title">AuthorizingRealm</span> </span>&#123;  <span class="comment">//继承AuthorizingRealm对象</span></span><br><span class="line">    <span class="comment">//授权</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> AuthorizationInfo <span class="title">doGetAuthorizationInfo</span><span class="params">(PrincipalCollection principalCollection)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;执行了doGetAuthorizationInfo&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//认证</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> AuthenticationInfo <span class="title">doGetAuthenticationInfo</span><span class="params">(AuthenticationToken token)</span> <span class="keyword">throws</span> AuthenticationException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;执行了doGetAuthenticationInfo&quot;</span>);</span><br><span class="line">        <span class="comment">//设置用户名和密码</span></span><br><span class="line">        String name=<span class="string">&quot;root&quot;</span>;</span><br><span class="line">        String password=<span class="string">&quot;root&quot;</span>;</span><br><span class="line">        UsernamePasswordToken passwordToken = (UsernamePasswordToken) token ;</span><br><span class="line">        <span class="keyword">if</span> (!passwordToken.getUsername().equals(name))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//密码认证shrio做</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> SimpleAuthenticationInfo(<span class="string">&quot;&quot;</span>,password,<span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShiroConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//3.ShiroFilterFactoryBean</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ShiroFilterFactoryBean <span class="title">shiroFilterFactoryBean</span><span class="params">(<span class="meta">@Qualifier(&quot;defaultWebSecurityManager&quot;)</span> DefaultWebSecurityManager defaultWebSecurityManager)</span></span>&#123;</span><br><span class="line">        ShiroFilterFactoryBean shiroFilterFactoryBean = <span class="keyword">new</span> ShiroFilterFactoryBean();</span><br><span class="line">        shiroFilterFactoryBean.setSecurityManager(defaultWebSecurityManager);</span><br><span class="line">        LinkedHashMap&lt;String, String&gt; filter = <span class="keyword">new</span> LinkedHashMap&lt;&gt;();</span><br><span class="line">        <span class="comment">//添加Shiro过滤器</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        * authc 必须认证才能访问</span></span><br><span class="line"><span class="comment">        * anon 无须认证就能访问</span></span><br><span class="line"><span class="comment">        * user 必须记住我 才能使用</span></span><br><span class="line"><span class="comment">        * role 拥有某个角色才能访问</span></span><br><span class="line"><span class="comment">        * perms 针对某个资源进行访问</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * */</span></span><br><span class="line">        filter.put(<span class="string">&quot;/User/*&quot;</span>,<span class="string">&quot;authc&quot;</span>);</span><br><span class="line">        shiroFilterFactoryBean.setFilterChainDefinitionMap(filter);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置登录的请求</span></span><br><span class="line">       shiroFilterFactoryBean.setLoginUrl(<span class="string">&quot;/User/login&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> shiroFilterFactoryBean;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2.DufaltRealmSercuryManger</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> DefaultWebSecurityManager <span class="title">defaultWebSecurityManager</span><span class="params">(<span class="meta">@Qualifier(&quot;userRealm&quot;)</span> UserRealm userRealm)</span></span>&#123;</span><br><span class="line">        DefaultWebSecurityManager SecurityManager = <span class="keyword">new</span> DefaultWebSecurityManager();</span><br><span class="line">        SecurityManager.setRealm(userRealm);</span><br><span class="line">        <span class="keyword">return</span> SecurityManager;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//1、创建Realm对象，需要自定义</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> UserRealm <span class="title">userRealm</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> UserRealm();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;login&quot;)</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">login</span><span class="params">(String username,String password,Model model)</span></span>&#123;</span><br><span class="line">      <span class="comment">//获取当前用户</span></span><br><span class="line">      Subject subject = SecurityUtils.getSubject();</span><br><span class="line">      <span class="comment">//封装用户数据</span></span><br><span class="line">      UsernamePasswordToken token = <span class="keyword">new</span> UsernamePasswordToken(username,password);</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">          subject.login(token); <span class="comment">//判断用户名是否异常,没有异常就说明ok</span></span><br><span class="line">          <span class="keyword">return</span> <span class="string">&quot;index&quot;</span>;</span><br><span class="line">      &#125; <span class="keyword">catch</span> (UnknownAccountException e) &#123;</span><br><span class="line">          model.addAttribute(<span class="string">&quot;msg&quot;</span>,<span class="string">&quot;用户名不一致&quot;</span>);</span><br><span class="line">          <span class="keyword">return</span> <span class="string">&quot;login&quot;</span>;</span><br><span class="line">      &#125;<span class="keyword">catch</span> (IncorrectCredentialsException e) &#123;    <span class="comment">//密码不一致异常</span></span><br><span class="line">          model.addAttribute(<span class="string">&quot;msg&quot;</span>,<span class="string">&quot;密码不一致&quot;</span>);</span><br><span class="line">          <span class="keyword">return</span> <span class="string">&quot;login&quot;</span>;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
 </details>
       
 
@@ -337,7 +288,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/12/15/Servlet%E7%9F%A5%E8%AF%86%E7%82%B9/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/04/20/shior/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -351,18 +302,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/12/15/Spring/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/04/20/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Spring
+          Linux基本命令
         
       </div>
     </a>
   
   
-    <a href="/2020/12/15/Cookie%E5%92%8CSession%E7%9A%84%E6%80%A7%E8%B4%A8%E5%92%8C%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Cookie和Session的性质和方法</div>
+    <a href="/2021/04/20/%E5%BC%80%E5%A7%8B%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">开始定时任务</div>
       <i class="icon-circle-right"></i>
     </a>
   

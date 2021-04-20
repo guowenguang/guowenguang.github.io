@@ -6,19 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>serlet知识点 | 小生</title>
+  <title>swagger | 小生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、Servlet的生命周期1.从服务器开启的到服务器结束 2.从第一次调用到服务器关闭 注意：init方法是对Servlet的一个方法，会在Servlet方法第一个加载进行存储执行，destroy是在服务器销毁时执行，也就服务器关闭的时候。 2、service方法和doGet方法和doPost方法serivce 方法：​          可以处理doGet和doPost方法，但是有serv">
+  <meta name="description" content="### 前后端分离  1、前段—&gt;前端控制层、视图层2、后端—-&gt;后端控制层、业务层、数据访问层3、前后端通过API进行交互4、前后端相对独立松耦合、也降低了集成风险好处1、是世界上最流行的API框架2、Restful APi文档自动生成3、直接运行，在线测试Api4、支持多种语言使用Swagger第一步导入依赖12345678910&lt;dependency&gt;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="serlet知识点">
-<meta property="og:url" content="http://yoursite.com/2020/12/15/Servlet%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
+<meta property="og:title" content="swagger">
+<meta property="og:url" content="http://yoursite.com/2021/04/20/swagger-1/index.html">
 <meta property="og:site_name" content="小生">
-<meta property="og:description" content="1、Servlet的生命周期1.从服务器开启的到服务器结束 2.从第一次调用到服务器关闭 注意：init方法是对Servlet的一个方法，会在Servlet方法第一个加载进行存储执行，destroy是在服务器销毁时执行，也就服务器关闭的时候。 2、service方法和doGet方法和doPost方法serivce 方法：​          可以处理doGet和doPost方法，但是有serv">
+<meta property="og:description" content="### 前后端分离  1、前段—&gt;前端控制层、视图层2、后端—-&gt;后端控制层、业务层、数据访问层3、前后端通过API进行交互4、前后端相对独立松耦合、也降低了集成风险好处1、是世界上最流行的API框架2、Restful APi文档自动生成3、直接运行，在线测试Api4、支持多种语言使用Swagger第一步导入依赖12345678910&lt;dependency&gt;">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-12-15T11:44:11.000Z">
-<meta property="article:modified_time" content="2020-12-15T12:11:44.974Z">
+<meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20210321202529006.png">
+<meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20210321195301332.png">
+<meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20210321203435858.png">
+<meta property="og:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20210321204536548.png">
+<meta property="article:published_time" content="2021-04-20T09:53:21.000Z">
+<meta property="article:modified_time" content="2021-04-20T10:15:31.829Z">
 <meta property="article:author" content="小郭">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="c:/Users/Administrator/AppData/Roaming/Typora/typora-user-images/image-20210321202529006.png">
   
     <link rel="alternative" href="/atom.xml" title="小生" type="application/atom+xml">
   
@@ -162,20 +167,20 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Servlet知识点" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-swagger-1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      serlet知识点
+      swagger
     </h1>
   
 
         
-        <a href="/2020/12/15/Servlet%E7%9F%A5%E8%AF%86%E7%82%B9/" class="archive-article-date">
-  	<time datetime="2020-12-15T11:44:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-15</time>
+        <a href="/2021/04/20/swagger-1/" class="archive-article-date">
+  	<time datetime="2021-04-20T09:53:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-20</time>
 </a>
         
       </header>
@@ -183,72 +188,53 @@
     <div class="article-entry" itemprop="articleBody">
       
         <details>
+    ### 前后端分离
 
-<h3 id="1、Servlet的生命周期"><a href="#1、Servlet的生命周期" class="headerlink" title="1、Servlet的生命周期"></a>1、<strong>Servlet的生命周期</strong></h3><p>1.从服务器开启的到服务器结束</p>
-<p>2.从第一次调用到服务器关闭</p>
-<p><strong>注意</strong>：<strong>init方法是对Servlet的一个方法，会在Servlet方法第一个加载进行存储执行，destroy是在服务器销毁时执行，也就服务器关闭的时候。</strong></p>
-<h3 id="2、service方法和doGet方法和doPost方法"><a href="#2、service方法和doGet方法和doPost方法" class="headerlink" title="2、service方法和doGet方法和doPost方法"></a>2、<strong>service方法和doGet方法和doPost方法</strong></h3><h5 id="serivce-方法："><a href="#serivce-方法：" class="headerlink" title="serivce 方法："></a>serivce 方法：</h5><p>​          可以处理doGet和doPost方法，但是有service方法会优先执行service方法再执行deGet和doPost方法</p>
-<h5 id="doGet方法："><a href="#doGet方法：" class="headerlink" title="doGet方法："></a>doGet方法：</h5><p>​         处理get方法</p>
-<h5 id="doPost方法："><a href="#doPost方法：" class="headerlink" title="doPost方法："></a>doPost方法：</h5><p>​        处理Post方法</p>
-<p><strong>注意</strong>：当service方法中覆写了super.service（req,resq）会先执行serivce方法在来执行doGet方法和doPost方法，如果doGet方法和doPost方法没有就会报<strong>405</strong>，但serivce方法还是会执行，<strong>因此，在serivce方法中最好不好写</strong>super.service(req,resq),写了就要写doGet和doPost。</p>
-<h3 id="3、req的方法"><a href="#3、req的方法" class="headerlink" title="3、req的方法"></a>3、<strong>req的方法</strong></h3><p>1.req.getMethod();  //获取请求的方法（post，get）</p>
-<p>2.req.getRequestURL();  //获取请求的URL</p>
-<p>3.req.getRequestrURI()  //获取请求的URI</p>
-<p>4.req.getScheme(); // 获取协议</p>
-<p>5.req.getHeader(“键名”);  //返回指定的请求头信息</p>
-<p>6.req.getHeaderName(); //返回请求头键名的的枚举集合</p>
-<p>7.req.getParameter(“键名”) //获取用户指定的信息（获取请求信息）</p>
-<p>8.re1.getParameterValues(“键名”) //返回同键不用值的请求数据，例如：（都选），返回数组</p>
-<h3 id="4、Servlet获取请求信息"><a href="#4、Servlet获取请求信息" class="headerlink" title="4、Servlet获取请求信息"></a>4、<strong>Servlet获取请求信息</strong></h3><p>//设置请求编码格式</p>
-<p>//获取响应的编码格式</p>
-<p>//获取用户信息</p>
-<p>//处理请求结果</p>
-<p>//处理响应结果</p>
-<p><strong>resp的方法</strong></p>
-<p>1.resp.setHeader();   //设置响应头，这个方法重写会被覆盖</p>
-<p>2.resp.addHeader();  //设置响应头，这个方法重写不会被覆盖</p>
-<p>3.resp.contentType(“text/html;charest= utf-8”)  //设置响应的编码</p>
-<p>4.resp.writer().write(“”)  //设置相应实体（响应处理结果）</p>
-<h3 id="5、请求乱码问题解决："><a href="#5、请求乱码问题解决：" class="headerlink" title="5、请求乱码问题解决："></a>5、<strong>请求乱码问题解决：</strong></h3><p>使用String进行重新编码(必用重用也比较同用)</p>
-<p>​     <strong>uname =new  String(uname.getBytes(“iso8859-1”),”utf-8”);</strong></p>
-<p>Get方式请求：</p>
-<p>​     第一步<strong>：req.setCharacterEncoding(“utf-8”);</strong></p>
-<p>​      第二步：在tomcat服务器目录下的conf文件下找到service.xml文件，打开进行</p>
-<p>如下配置：</p>
-<pre><code>    &lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;
-           connectionTimeout=&quot;20000&quot;
-           redirectPort=&quot;8443&quot; useBodyEncodingForURI=&quot;ture&quot;/&gt;</code></pre>
-<p>Post请求方法：</p>
-<p>​        <strong>req.setCharacterEncoding(“utf-8”);</strong></p>
-<p><strong>数据流转过程：</strong></p>
-<p>​    浏览器——-》服务器——-》数据库（发送请求过程）</p>
-<p>​    数据库——-》服务器——–》浏览器（响应处理结果）</p>
-<p><strong>请求转发学习：</strong>（只发送一次请求给服务器）</p>
-<p>​        作用：实现多个servlet联动操作来处理请求，这样避免代码冗余，让servlet的职责更加明确。</p>
-<p>使用：</p>
-<p>​            <strong>req.getRequestDispatcher(“要转发的地址”).forward(req,resp);</strong></p>
-<p>​            <strong>转发的地址是servlet的别名</strong></p>
-<p><strong>特点：</strong></p>
-<p>​            一次请求，浏览器地址栏信息不改变。</p>
-<p>注意：</p>
-<p>​        请求转发后的直接return结束就可以了。</p>
-<p><strong>reuqet作用域</strong></p>
-<p>​        解决一次请求内的servlet的数据共享问题</p>
-<p><strong>重定向</strong>（向服务器发送两次请求）</p>
-<p>​        解决了表单重复提交的问题，以及当前servlet无法请求的问题。</p>
-<p>​    使用：</p>
-<p>​            resp.sendRedirect(String uri);</p>
-<p>​    特点：</p>
-<p>​            两次请求，两个request对象。</p>
-<p>​            浏览器地址栏信息改变</p>
-<p>时机：</p>
-<p>​            如果请求中有表单数据，而数据又比较重要，不能重复提交，建议使用重定向。</p>
-<p>​            如果请求被servlet接收后，无法进行处理，建议使用重定向定位到处理的资源里面。</p>
-<h3 id="6、请求转发和重定向的区别："><a href="#6、请求转发和重定向的区别：" class="headerlink" title="6、请求转发和重定向的区别："></a>6、<strong>请求转发和重定向的区别：</strong></h3><p>​                                    请求转发                             重定向</p>
-<p>地址栏是否改变             不变                                    改变</p>
-<p>是否保留第一次的数据       保留                                不保留</p>
-<p>请求的次数                         1                                        2</p>
+<h4 id="1、前段—-gt-前端控制层、视图层"><a href="#1、前段—-gt-前端控制层、视图层" class="headerlink" title="1、前段—&gt;前端控制层、视图层"></a>1、前段—&gt;前端控制层、视图层</h4><h4 id="2、后端—-gt-后端控制层、业务层、数据访问层"><a href="#2、后端—-gt-后端控制层、业务层、数据访问层" class="headerlink" title="2、后端—-&gt;后端控制层、业务层、数据访问层"></a>2、后端—-&gt;后端控制层、业务层、数据访问层</h4><h4 id="3、前后端通过API进行交互"><a href="#3、前后端通过API进行交互" class="headerlink" title="3、前后端通过API进行交互"></a>3、前后端通过API进行交互</h4><h4 id="4、前后端相对独立松耦合、也降低了集成风险"><a href="#4、前后端相对独立松耦合、也降低了集成风险" class="headerlink" title="4、前后端相对独立松耦合、也降低了集成风险"></a>4、前后端相对独立松耦合、也降低了集成风险</h4><h2 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h2><h4 id="1、是世界上最流行的API框架"><a href="#1、是世界上最流行的API框架" class="headerlink" title="1、是世界上最流行的API框架"></a>1、是世界上最流行的API框架</h4><h4 id="2、Restful-APi文档自动生成"><a href="#2、Restful-APi文档自动生成" class="headerlink" title="2、Restful APi文档自动生成"></a>2、Restful APi文档自动生成</h4><h4 id="3、直接运行，在线测试Api"><a href="#3、直接运行，在线测试Api" class="headerlink" title="3、直接运行，在线测试Api"></a>3、直接运行，在线测试Api</h4><h4 id="4、支持多种语言"><a href="#4、支持多种语言" class="headerlink" title="4、支持多种语言"></a>4、支持多种语言</h4><h2 id="使用Swagger"><a href="#使用Swagger" class="headerlink" title="使用Swagger"></a>使用Swagger</h2><h4 id="第一步导入依赖"><a href="#第一步导入依赖" class="headerlink" title="第一步导入依赖"></a>第一步导入依赖</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="第二步使用前，要先配置一个配置类"><a href="#第二步使用前，要先配置一个配置类" class="headerlink" title="第二步使用前，要先配置一个配置类"></a>第二步使用前，要先配置一个配置类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableSwagger2</span>  <span class="comment">//自动开启Swagger</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwaggerConfig</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Docket <span class="title">docket</span><span class="params">()</span></span>&#123;<span class="comment">//swagger的bean是通过Docket来实例的</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())</span><br><span class="line">                <span class="comment">//.enable(false)</span></span><br><span class="line">                .select()</span><br><span class="line">                <span class="comment">/*</span></span><br><span class="line"><span class="comment">                * RequestHandlerSelectors: 需要扫描的接口方式</span></span><br><span class="line"><span class="comment">                * basePackage：需要扫描的包</span></span><br><span class="line"><span class="comment">                * any:扫描全部的包</span></span><br><span class="line"><span class="comment">                * none:不扫描包</span></span><br><span class="line"><span class="comment">                *</span></span><br><span class="line"><span class="comment">                * */</span></span><br><span class="line">                <span class="comment">//扫描指定的包</span></span><br><span class="line">                .apis(RequestHandlerSelectors.basePackage(<span class="string">&quot;com.gwg.helloswagger.controller&quot;</span>))</span><br><span class="line">               <span class="comment">//过滤指定的路径</span></span><br><span class="line">                <span class="comment">//.paths(PathSelectors.ant(&quot;/gwg/**&quot;))</span></span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> ApiInfo <span class="title">apiInfo</span><span class="params">()</span></span>&#123;<span class="comment">//配置文档信息</span></span><br><span class="line">        Contact contact = <span class="keyword">new</span> Contact(<span class="string">&quot;小生&quot;</span>, <span class="string">&quot;https://www.guowenguang.github.io.com&quot;</span>, <span class="string">&quot;2353467122@qq.com&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ApiInfo(<span class="string">&quot;小生的Swagger&quot;</span>,</span><br><span class="line">                <span class="string">&quot;即使再小的帆也能远航&quot;</span>,</span><br><span class="line">                <span class="string">&quot;v1.0&quot;</span>, <span class="string">&quot;https://www.guowenguang.github.io.com&quot;</span>, contact,</span><br><span class="line">                <span class="string">&quot;Apache 2.0&quot;</span>,</span><br><span class="line">                <span class="string">&quot;http://www.apache.org/licenses/LICENSE-2.0&quot;</span>, <span class="keyword">new</span> ArrayList());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="第三步-写一个controller层"><a href="#第三步-写一个controller层" class="headerlink" title="第三步:写一个controller层"></a>第三步:写一个controller层</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwaggerController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(value = &quot;/hello&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello,swagger&quot;</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="第四布：启动tomcat在浏览器打开http-localhost-8080-swagger-ui-html"><a href="#第四布：启动tomcat在浏览器打开http-localhost-8080-swagger-ui-html" class="headerlink" title="第四布：启动tomcat在浏览器打开http://localhost:8080/swagger-ui.html"></a>第四布：启动tomcat在浏览器打开<a target="_blank" rel="noopener" href="http://localhost:8080/swagger-ui.html">http://localhost:8080/swagger-ui.html</a></h4><p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210321202529006.png" alt="image-20210321202529006"></p>
+<h4 id="enable-false-表示关闭swagger"><a href="#enable-false-表示关闭swagger" class="headerlink" title="enable(false)表示关闭swagger"></a>enable(false)表示关闭swagger</h4><h4 id="在正式发布项目的时候要关闭swagger，保证代码安全和减少运行内存"><a href="#在正式发布项目的时候要关闭swagger，保证代码安全和减少运行内存" class="headerlink" title="在正式发布项目的时候要关闭swagger，保证代码安全和减少运行内存"></a>在正式发布项目的时候要关闭swagger，保证代码安全和减少运行内存</h4><p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210321195301332.png" alt="image-20210321195301332"></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="配置Api分组"><a href="#配置Api分组" class="headerlink" title="配置Api分组"></a>配置Api分组</h2><h4 id="1、如果没有配置分组，默认是default，通过groupname-方法来进行配置分组"><a href="#1、如果没有配置分组，默认是default，通过groupname-方法来进行配置分组" class="headerlink" title="1、如果没有配置分组，默认是default，通过groupname()方法来进行配置分组"></a>1、如果没有配置分组，默认是default，通过groupname()方法来进行配置分组</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Docket <span class="title">docket1</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="comment">//enable(false) 表示关闭swagger</span></span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())</span><br><span class="line">               .groupName(<span class="string">&quot;A&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="meta">@Bean</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Docket <span class="title">docket2</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="comment">//enable(false) 表示关闭swagger</span></span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())</span><br><span class="line">               .groupName(<span class="string">&quot;B&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="meta">@Bean</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Docket <span class="title">docket3</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="comment">//enable(false) 表示关闭swagger</span></span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())</span><br><span class="line">               .groupName(<span class="string">&quot;C&quot;</span>);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="运行后的结果"><a href="#运行后的结果" class="headerlink" title="运行后的结果"></a>运行后的结果</h3><h4 id="配置Api分组的好处可以任务分配，使前端更清楚的看到后端的接口"><a href="#配置Api分组的好处可以任务分配，使前端更清楚的看到后端的接口" class="headerlink" title="配置Api分组的好处可以任务分配，使前端更清楚的看到后端的接口"></a>配置Api分组的好处可以任务分配，使前端更清楚的看到后端的接口</h4><p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210321203435858.png" alt="image-20210321203435858"></p>
+<h3 id="实体配置"><a href="#实体配置" class="headerlink" title="实体配置"></a>实体配置</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ApiModel(&quot;用户实体类&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;用户名&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;密码&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ApiOperation(value = &quot;小生的接口&quot;)</span></span><br><span class="line"><span class="meta">@PostMapping(value = &quot;/user&quot;)</span></span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">user</span><span class="params">(<span class="meta">@ApiParam(value = &quot;这个表示用户名&quot;)</span>String name)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210321204536548.png" alt="image-20210321204536548"></p>
+<h2 id="Swagger的简单配置"><a href="#Swagger的简单配置" class="headerlink" title="Swagger的简单配置"></a>Swagger的简单配置</h2><table>
+<thead>
+<tr>
+<th>@Api(tags = “xxx模块说明”)</th>
+<th>作用在模块类上</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@ApiOperation(“xxx接口说明”)</td>
+<td>作用在接口方法上</td>
+</tr>
+<tr>
+<td>@ApiModel(“xxxPOJO说明”)</td>
+<td>作用在模型类上：如VO、BO</td>
+</tr>
+<tr>
+<td>@ApiModelProperty(value = “xxx属性说明”,hidden = true)</td>
+<td>作用在类方法和属性上，hidden设置为true可以隐藏该属性</td>
+</tr>
+<tr>
+<td>@ApiParam(“xxx参数说明”)</td>
+<td>作用在参数、方法和字段上，类似@ApiModelProperty</td>
+</tr>
+</tbody></table>
 </details>
+
+
+
+<h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3>
       
 
       
@@ -337,7 +323,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/12/15/Servlet%E7%9F%A5%E8%AF%86%E7%82%B9/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2021/04/20/swagger-1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -351,18 +337,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/12/15/Spring/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2021/04/20/%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Spring
+          异步处理
         
       </div>
     </a>
   
   
-    <a href="/2020/12/15/Cookie%E5%92%8CSession%E7%9A%84%E6%80%A7%E8%B4%A8%E5%92%8C%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Cookie和Session的性质和方法</div>
+    <a href="/2020/12/15/MVC%E6%80%9D%E6%83%B3%E5%92%8CDao%E5%B1%82/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">MVC思想和Dao层</div>
       <i class="icon-circle-right"></i>
     </a>
   

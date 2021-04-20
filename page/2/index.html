@@ -6,17 +6,13 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>serlet知识点 | 小生</title>
+  <title>小生</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1、Servlet的生命周期1.从服务器开启的到服务器结束 2.从第一次调用到服务器关闭 注意：init方法是对Servlet的一个方法，会在Servlet方法第一个加载进行存储执行，destroy是在服务器销毁时执行，也就服务器关闭的时候。 2、service方法和doGet方法和doPost方法serivce 方法：​          可以处理doGet和doPost方法，但是有serv">
-<meta property="og:type" content="article">
-<meta property="og:title" content="serlet知识点">
-<meta property="og:url" content="http://yoursite.com/2020/12/15/Servlet%E7%9F%A5%E8%AF%86%E7%82%B9/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="小生">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="小生">
-<meta property="og:description" content="1、Servlet的生命周期1.从服务器开启的到服务器结束 2.从第一次调用到服务器关闭 注意：init方法是对Servlet的一个方法，会在Servlet方法第一个加载进行存储执行，destroy是在服务器销毁时执行，也就服务器关闭的时候。 2、service方法和doGet方法和doPost方法serivce 方法：​          可以处理doGet和doPost方法，但是有serv">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2020-12-15T11:44:11.000Z">
-<meta property="article:modified_time" content="2020-12-15T12:11:44.974Z">
 <meta property="article:author" content="小郭">
 <meta name="twitter:card" content="summary">
   
@@ -162,20 +158,22 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Servlet知识点" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-java知识点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      serlet知识点
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/12/12/java%E7%9F%A5%E8%AF%86%E7%82%B9/">java知识点</a>
     </h1>
   
 
         
-        <a href="/2020/12/15/Servlet%E7%9F%A5%E8%AF%86%E7%82%B9/" class="archive-article-date">
-  	<time datetime="2020-12-15T11:44:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-15</time>
+        <a href="/2020/12/12/java%E7%9F%A5%E8%AF%86%E7%82%B9/" class="archive-article-date">
+  	<time datetime="2020-12-12T05:24:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-12</time>
 </a>
         
       </header>
@@ -184,104 +182,15 @@
       
         <details>
 
-<h3 id="1、Servlet的生命周期"><a href="#1、Servlet的生命周期" class="headerlink" title="1、Servlet的生命周期"></a>1、<strong>Servlet的生命周期</strong></h3><p>1.从服务器开启的到服务器结束</p>
-<p>2.从第一次调用到服务器关闭</p>
-<p><strong>注意</strong>：<strong>init方法是对Servlet的一个方法，会在Servlet方法第一个加载进行存储执行，destroy是在服务器销毁时执行，也就服务器关闭的时候。</strong></p>
-<h3 id="2、service方法和doGet方法和doPost方法"><a href="#2、service方法和doGet方法和doPost方法" class="headerlink" title="2、service方法和doGet方法和doPost方法"></a>2、<strong>service方法和doGet方法和doPost方法</strong></h3><h5 id="serivce-方法："><a href="#serivce-方法：" class="headerlink" title="serivce 方法："></a>serivce 方法：</h5><p>​          可以处理doGet和doPost方法，但是有service方法会优先执行service方法再执行deGet和doPost方法</p>
-<h5 id="doGet方法："><a href="#doGet方法：" class="headerlink" title="doGet方法："></a>doGet方法：</h5><p>​         处理get方法</p>
-<h5 id="doPost方法："><a href="#doPost方法：" class="headerlink" title="doPost方法："></a>doPost方法：</h5><p>​        处理Post方法</p>
-<p><strong>注意</strong>：当service方法中覆写了super.service（req,resq）会先执行serivce方法在来执行doGet方法和doPost方法，如果doGet方法和doPost方法没有就会报<strong>405</strong>，但serivce方法还是会执行，<strong>因此，在serivce方法中最好不好写</strong>super.service(req,resq),写了就要写doGet和doPost。</p>
-<h3 id="3、req的方法"><a href="#3、req的方法" class="headerlink" title="3、req的方法"></a>3、<strong>req的方法</strong></h3><p>1.req.getMethod();  //获取请求的方法（post，get）</p>
-<p>2.req.getRequestURL();  //获取请求的URL</p>
-<p>3.req.getRequestrURI()  //获取请求的URI</p>
-<p>4.req.getScheme(); // 获取协议</p>
-<p>5.req.getHeader(“键名”);  //返回指定的请求头信息</p>
-<p>6.req.getHeaderName(); //返回请求头键名的的枚举集合</p>
-<p>7.req.getParameter(“键名”) //获取用户指定的信息（获取请求信息）</p>
-<p>8.re1.getParameterValues(“键名”) //返回同键不用值的请求数据，例如：（都选），返回数组</p>
-<h3 id="4、Servlet获取请求信息"><a href="#4、Servlet获取请求信息" class="headerlink" title="4、Servlet获取请求信息"></a>4、<strong>Servlet获取请求信息</strong></h3><p>//设置请求编码格式</p>
-<p>//获取响应的编码格式</p>
-<p>//获取用户信息</p>
-<p>//处理请求结果</p>
-<p>//处理响应结果</p>
-<p><strong>resp的方法</strong></p>
-<p>1.resp.setHeader();   //设置响应头，这个方法重写会被覆盖</p>
-<p>2.resp.addHeader();  //设置响应头，这个方法重写不会被覆盖</p>
-<p>3.resp.contentType(“text/html;charest= utf-8”)  //设置响应的编码</p>
-<p>4.resp.writer().write(“”)  //设置相应实体（响应处理结果）</p>
-<h3 id="5、请求乱码问题解决："><a href="#5、请求乱码问题解决：" class="headerlink" title="5、请求乱码问题解决："></a>5、<strong>请求乱码问题解决：</strong></h3><p>使用String进行重新编码(必用重用也比较同用)</p>
-<p>​     <strong>uname =new  String(uname.getBytes(“iso8859-1”),”utf-8”);</strong></p>
-<p>Get方式请求：</p>
-<p>​     第一步<strong>：req.setCharacterEncoding(“utf-8”);</strong></p>
-<p>​      第二步：在tomcat服务器目录下的conf文件下找到service.xml文件，打开进行</p>
-<p>如下配置：</p>
-<pre><code>    &lt;Connector port=&quot;8080&quot; protocol=&quot;HTTP/1.1&quot;
-           connectionTimeout=&quot;20000&quot;
-           redirectPort=&quot;8443&quot; useBodyEncodingForURI=&quot;ture&quot;/&gt;</code></pre>
-<p>Post请求方法：</p>
-<p>​        <strong>req.setCharacterEncoding(“utf-8”);</strong></p>
-<p><strong>数据流转过程：</strong></p>
-<p>​    浏览器——-》服务器——-》数据库（发送请求过程）</p>
-<p>​    数据库——-》服务器——–》浏览器（响应处理结果）</p>
-<p><strong>请求转发学习：</strong>（只发送一次请求给服务器）</p>
-<p>​        作用：实现多个servlet联动操作来处理请求，这样避免代码冗余，让servlet的职责更加明确。</p>
-<p>使用：</p>
-<p>​            <strong>req.getRequestDispatcher(“要转发的地址”).forward(req,resp);</strong></p>
-<p>​            <strong>转发的地址是servlet的别名</strong></p>
-<p><strong>特点：</strong></p>
-<p>​            一次请求，浏览器地址栏信息不改变。</p>
-<p>注意：</p>
-<p>​        请求转发后的直接return结束就可以了。</p>
-<p><strong>reuqet作用域</strong></p>
-<p>​        解决一次请求内的servlet的数据共享问题</p>
-<p><strong>重定向</strong>（向服务器发送两次请求）</p>
-<p>​        解决了表单重复提交的问题，以及当前servlet无法请求的问题。</p>
-<p>​    使用：</p>
-<p>​            resp.sendRedirect(String uri);</p>
-<p>​    特点：</p>
-<p>​            两次请求，两个request对象。</p>
-<p>​            浏览器地址栏信息改变</p>
-<p>时机：</p>
-<p>​            如果请求中有表单数据，而数据又比较重要，不能重复提交，建议使用重定向。</p>
-<p>​            如果请求被servlet接收后，无法进行处理，建议使用重定向定位到处理的资源里面。</p>
-<h3 id="6、请求转发和重定向的区别："><a href="#6、请求转发和重定向的区别：" class="headerlink" title="6、请求转发和重定向的区别："></a>6、<strong>请求转发和重定向的区别：</strong></h3><p>​                                    请求转发                             重定向</p>
-<p>地址栏是否改变             不变                                    改变</p>
-<p>是否保留第一次的数据       保留                                不保留</p>
-<p>请求的次数                         1                                        2</p>
-</details>
+<summary>Java基础</summary>
+
+<h3 id="1、Java环境变量"><a href="#1、Java环境变量" class="headerlink" title="1、Java环境变量"></a>1、Java环境变量</h3><h4 id="1-1、想要Java编译和运行，必须在电脑的环境变量中填以下信息。"><a href="#1-1、想要Java编译和运行，必须在电脑的环境变量中填以下信息。" class="headerlink" title="1.1、想要Java编译和运行，必须在电脑的环境变量中填以下信息。"></a>1.1、想要Java编译和运行，必须在电脑的环境变量中填以下信息。</h4><h5 id="classpath-E-Java-jdk1-8-0-221-lib"><a href="#classpath-E-Java-jdk1-8-0-221-lib" class="headerlink" title="classpath:  .,E:\Java\jdk1.8.0_221\lib"></a>classpath:  .,E:\Java\jdk1.8.0_221\lib</h5><h5 id="path-E-Java-jdk1-8-0-221-bin"><a href="#path-E-Java-jdk1-8-0-221-bin" class="headerlink" title="path: E:\Java\jdk1.8.0_221\bin"></a>path: E:\Java\jdk1.8.0_221\bin</h5><h5 id="JAVA-HOME-E-Java-jdk1-8-0-221"><a href="#JAVA-HOME-E-Java-jdk1-8-0-221" class="headerlink" title="JAVA_HOME:E:\Java\jdk1.8.0_221"></a>JAVA_HOME:E:\Java\jdk1.8.0_221</h5><h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="1-2、如果跟以下图一样就说明Java配置成功了！"><a href="#1-2、如果跟以下图一样就说明Java配置成功了！" class="headerlink" title="1.2、如果跟以下图一样就说明Java配置成功了！"></a>1.2、如果跟以下图一样就说明Java配置成功了！</h4><p><img src="https://images2015.cnblogs.com/blog/805379/201605/805379-20160512225343452-1007903408.png" alt="img"></p>
+<p><img src="https://images2015.cnblogs.com/blog/805379/201605/805379-20160512225445859-652093728.png" alt="img"></p>
+<h3 id="2、Java语言基础"><a href="#2、Java语言基础" class="headerlink" title="2、Java语言基础"></a>2、Java语言基础</h3><h4 id="2-1、常用关键字有："><a href="#2-1、常用关键字有：" class="headerlink" title="2.1、常用关键字有："></a>2.1、常用关键字有：</h4><p><img src="https://img-blog.csdnimg.cn/20190407171115204.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3oxd2Vi,size_16,color_FFFFFF,t_70" alt="img"></p>
+<h3 id="3、面向对象"><a href="#3、面向对象" class="headerlink" title="3、面向对象"></a>3、面向对象</h3><h4 id="3-1、面向对象有三大特性-封装、继承、多态。"><a href="#3-1、面向对象有三大特性-封装、继承、多态。" class="headerlink" title="3.1、面向对象有三大特性:封装、继承、多态。"></a>3.1、面向对象有三大特性:封装、继承、多态。</h4><h5 id="封装-private-：将类的成员变量和成员方法都隐藏起来、不让外部直接访问；"><a href="#封装-private-：将类的成员变量和成员方法都隐藏起来、不让外部直接访问；" class="headerlink" title="封装( private )：将类的成员变量和成员方法都隐藏起来、不让外部直接访问；"></a>封装( private )：将类的成员变量和成员方法都隐藏起来、不让外部直接访问；</h5><h5 id="将类内部与外部交互的方法暴露出来，让方法来控制外部类中的成员变量和实现细节进行安全的访问和操作。"><a href="#将类内部与外部交互的方法暴露出来，让方法来控制外部类中的成员变量和实现细节进行安全的访问和操作。" class="headerlink" title="将类内部与外部交互的方法暴露出来，让方法来控制外部类中的成员变量和实现细节进行安全的访问和操作。"></a>将类内部与外部交互的方法暴露出来，让方法来控制外部类中的成员变量和实现细节进行安全的访问和操作。</h5><h5 id="继承（extends）：当子类继承父类要用extends关键字来继承父类的方法和属性，当父类的属性和方法带有private关键字的时候，子类不能继承。而父类不能继承子类的方法和属性"><a href="#继承（extends）：当子类继承父类要用extends关键字来继承父类的方法和属性，当父类的属性和方法带有private关键字的时候，子类不能继承。而父类不能继承子类的方法和属性" class="headerlink" title="继承（extends）：当子类继承父类要用extends关键字来继承父类的方法和属性，当父类的属性和方法带有private关键字的时候，子类不能继承。而父类不能继承子类的方法和属性"></a>继承（extends）：当子类继承父类要用extends关键字来继承父类的方法和属性，当父类的属性和方法带有private关键字的时候，子类不能继承。而父类不能继承子类的方法和属性</h5><h5 id="多态：多态是同一个行为具有多个不同表现形式或形态的能力。多态就是同一个接口，使用不同的实例而执行不同操作"><a href="#多态：多态是同一个行为具有多个不同表现形式或形态的能力。多态就是同一个接口，使用不同的实例而执行不同操作" class="headerlink" title="多态：多态是同一个行为具有多个不同表现形式或形态的能力。多态就是同一个接口，使用不同的实例而执行不同操作"></a>多态：多态是同一个行为具有多个不同表现形式或形态的能力。多态就是同一个接口，使用不同的实例而执行不同操作</h5><p>​            <img src="https://www.runoob.com/wp-content/uploads/2013/12/java-polymorphism-111.png" alt="img"></p>
+<h4 id="3-2、多态的特点：-1、能解藕-2、可扩充的-3、接口性-4、灵活性-5、替换性"><a href="#3-2、多态的特点：-1、能解藕-2、可扩充的-3、接口性-4、灵活性-5、替换性" class="headerlink" title="3.2、多态的特点：  1、能解藕    2、可扩充的     3、接口性   4、灵活性    5、替换性"></a>3.2、多态的特点：  1、能解藕    2、可扩充的     3、接口性   4、灵活性    5、替换性</h4><h4 id="3-3、多态存在的三个表现"><a href="#3-3、多态存在的三个表现" class="headerlink" title="3.3、多态存在的三个表现"></a>3.3、多态存在的三个表现</h4><h5 id="1、继承"><a href="#1、继承" class="headerlink" title="1、继承"></a>1、继承</h5><h5 id="2、重写"><a href="#2、重写" class="headerlink" title="2、重写"></a>2、重写</h5><h5 id="3、父类指向子类-Parent-p-new-Son"><a href="#3、父类指向子类-Parent-p-new-Son" class="headerlink" title="3、父类指向子类        Parent p  = new Son();"></a>3、父类指向子类        Parent p  = new Son();</h5></details>
       
 
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢小可爱的打赏哟<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/zfb.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/img/alipay.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -290,84 +199,16 @@
       
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/12/12/java%E7%9F%A5%E8%AF%86%E7%82%B9/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2020/12/15/Servlet%E7%9F%A5%E8%AF%86%E7%82%B9/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/12/15/Spring/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Spring
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2020/12/15/Cookie%E5%92%8CSession%E7%9A%84%E6%80%A7%E8%B4%A8%E5%92%8C%E6%96%B9%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Cookie和Session的性质和方法</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -389,13 +230,11 @@
 
   
   
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&amp;laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
   
 
-  
-
-  
-
-  
 
           </div>
         </div>
@@ -416,8 +255,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

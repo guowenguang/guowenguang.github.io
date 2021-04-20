@@ -160,6 +160,439 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Linux基本命令" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/20/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/">Linux基本命令</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/20/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+  	<time datetime="2021-04-20T10:03:22.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <details>
+    # Linux
+
+<blockquote>
+<h3 id="处理目录的常用命令"><a href="#处理目录的常用命令" class="headerlink" title="处理目录的常用命令"></a>处理目录的常用命令</h3></blockquote>
+<ul>
+<li><h3 id="ls-列出文件目录"><a href="#ls-列出文件目录" class="headerlink" title="ls   列出文件目录"></a>ls   列出文件目录</h3></li>
+<li><h3 id="cd-返回上一层"><a href="#cd-返回上一层" class="headerlink" title="cd .. 返回上一层"></a>cd .. 返回上一层</h3></li>
+<li><h3 id="pwd-显示当前目录"><a href="#pwd-显示当前目录" class="headerlink" title="pwd  显示当前目录"></a>pwd  显示当前目录</h3></li>
+<li><h3 id="mkdir-创建一个新的目录"><a href="#mkdir-创建一个新的目录" class="headerlink" title="mkdir   创建一个新的目录"></a>mkdir   创建一个新的目录</h3></li>
+<li><h3 id="rmdir-删除一个目录"><a href="#rmdir-删除一个目录" class="headerlink" title="rmdir   删除一个目录"></a>rmdir   删除一个目录</h3></li>
+<li><h3 id="cp-复制一个目录"><a href="#cp-复制一个目录" class="headerlink" title="cp   复制一个目录"></a>cp   复制一个目录</h3></li>
+<li><h3 id="rm-移除文件和目录"><a href="#rm-移除文件和目录" class="headerlink" title="rm  移除文件和目录"></a>rm  移除文件和目录</h3></li>
+<li><h3 id="mv-移动文件与目录-，或修改文件与目录"><a href="#mv-移动文件与目录-，或修改文件与目录" class="headerlink" title="mv  移动文件与目录 ，或修改文件与目录"></a>mv  移动文件与目录 ，或修改文件与目录</h3></li>
+<li><h3 id="p-可以添加多层目录"><a href="#p-可以添加多层目录" class="headerlink" title="-p    可以添加多层目录"></a>-p    可以添加多层目录</h3><blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost home]<span class="comment"># mkdir -p test1/test2/test3</span></span><br><span class="line">[root@localhost home]<span class="comment"># ls</span></span><br><span class="line">c7  guo  guo.txt  guowenguang  gwg2  jin  test1  xiaosheng</span><br><span class="line">[root@localhost home]<span class="comment"># cd test1</span></span><br><span class="line">[root@localhost test1]<span class="comment"># ls</span></span><br><span class="line">test2</span><br><span class="line">[root@localhost test1]<span class="comment"># cd test2</span></span><br><span class="line">[root@localhost test2]<span class="comment"># ls</span></span><br><span class="line">test3</span><br><span class="line">[root@localhost test2]<span class="comment"># </span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</blockquote>
+</li>
+</ul>
+<h3 id="删除多层目录"><a href="#删除多层目录" class="headerlink" title="删除多层目录"></a>删除多层目录</h3>  <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost home]<span class="comment"># rmdir -p test1/test2/test3</span></span><br><span class="line">[root@localhost home]<span class="comment"># ls</span></span><br><span class="line">c7  guo  guo.txt  guowenguang  gwg2  jin  xiaosheng</span><br><span class="line">[root@localhost home]<span class="comment"># </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="基本属性"><a href="#基本属性" class="headerlink" title="基本属性"></a>基本属性</h1><p><strong>查看基本属性我们可以在根目录下输入    ls -l 查看</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost /]<span class="comment"># ls -l</span></span><br><span class="line">总用量 24</span><br><span class="line">lrwxrwxrwx.   1 root root    7 3月  23 20:02 bin -&gt; usr/bin</span><br><span class="line">dr-xr-xr-x.   5 root root 4096 3月  23 20:10 boot</span><br><span class="line">drwxr-xr-x.  20 root root 3300 3月  23 12:31 dev</span><br><span class="line">drwxr-xr-x. 139 root root 8192 3月  23 20:32 etc</span><br><span class="line">drwxr-xr-x.   8 root root  101 3月  23 21:06 home</span><br><span class="line">lrwxrwxrwx.   1 root root    7 3月  23 20:02 lib -&gt; usr/lib</span><br><span class="line">lrwxrwxrwx.   1 root root    9 3月  23 20:02 lib64 -&gt; usr/lib64</span><br><span class="line">drwxr-xr-x.   2 root root    6 4月  11 2018 media</span><br><span class="line">drwxr-xr-x.   2 root root    6 4月  11 2018 mnt</span><br><span class="line">drwxr-xr-x.   3 root root   16 3月  23 20:05 opt</span><br><span class="line">dr-xr-xr-x. 213 root root    0 3月  23 12:31 proc</span><br><span class="line">dr-xr-x---.  14 root root 4096 3月  23 19:16 root</span><br><span class="line">drwxr-xr-x.  42 root root 1280 3月  23 12:32 run</span><br><span class="line">lrwxrwxrwx.   1 root root    8 3月  23 20:02 sbin -&gt; usr/sbin</span><br><span class="line">drwxr-xr-x.   2 root root    6 4月  11 2018 srv</span><br><span class="line">dr-xr-xr-x.  13 root root    0 3月  23 12:31 sys</span><br><span class="line">drwxrwxrwt.  19 root root 4096 3月  23 21:04 tmp</span><br><span class="line">drwxr-xr-x.  14 root root  166 3月  23 14:57 usr</span><br><span class="line">drwxr-xr-x.  20 root root  282 3月  23 20:10 var</span><br><span class="line">[root@localhost /]<span class="comment"># </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="开头的”l”表示一个连接"><a href="#开头的”l”表示一个连接" class="headerlink" title="开头的”l”表示一个连接"></a>开头的”l”表示一个连接</h3><h3 id="开头为“d”表示一个目录"><a href="#开头为“d”表示一个目录" class="headerlink" title="开头为“d”表示一个目录"></a>开头为“d”表示一个目录</h3><h3 id="为“-”-表示一个文件"><a href="#为“-”-表示一个文件" class="headerlink" title="为“-” 表示一个文件"></a>为“-” 表示一个文件</h3><p>接下来的字符中，以三个为一组，均为【<strong>rwx</strong>】的参数组合</p>
+<p>其中，<strong>r</strong>表示读，<strong>w</strong>表示写，<strong>x</strong>表示可执行的</p>
+<p>当为 **-**的时候说明是没有权限</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost /]<span class="comment"># ls -l</span></span><br><span class="line">总用量 24</span><br><span class="line">lrwxrwxrwx.   1 root root    7 3月  23 20:02 bin -&gt; usr/bin</span><br><span class="line">dr-xr-xr-x.   5 root root 4096 3月  23 20:10 boot</span><br><span class="line">drwxr-xr-x.  20 root root 3300 3月  23 12:31 dev</span><br><span class="line">drwxr-xr-x. 139 root root 8192 3月  23 20:32 etc</span><br><span class="line">drwxr-xr-x.   8 root root  101 3月  23 21:06 home</span><br><span class="line">lrwxrwxrwx.   1 root root    7 3月  23 20:02 lib -&gt; usr/lib</span><br><span class="line">lrwxrwxrwx.   1 root root    9 3月  23 20:02 lib64 -&gt; usr/lib64</span><br><span class="line">drwxr-xr-x.   2 root root    6 4月  11 2018 media</span><br><span class="line">drwxr-xr-x.   2 root root    6 4月  11 2018 mnt</span><br><span class="line">drwxr-xr-x.   3 root root   16 3月  23 20:05 opt</span><br><span class="line">dr-xr-xr-x. 213 root root    0 3月  23 12:31 proc</span><br><span class="line">dr-xr-x---.  14 root root 4096 3月  23 19:16 root</span><br><span class="line">drwxr-xr-x.  42 root root 1280 3月  23 12:32 run</span><br><span class="line">lrwxrwxrwx.   1 root root    8 3月  23 20:02 sbin -&gt; usr/sbin</span><br><span class="line">drwxr-xr-x.   2 root root    6 4月  11 2018 srv</span><br><span class="line">dr-xr-xr-x.  13 root root    0 3月  23 12:31 sys</span><br><span class="line">drwxrwxrwt.  19 root root 4096 3月  23 21:04 tmp</span><br><span class="line">drwxr-xr-x.  14 root root  166 3月  23 14:57 usr</span><br><span class="line">drwxr-xr-x.  20 root root  282 3月  23 20:10 var</span><br><span class="line">[root@localhost /]<span class="comment"># </span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210323211800194.png" alt="image-20210323211800194"></p>
+<h2 id="在Linux中第1、4、7表示读权限，第2、5、8表示为写，第3、6、9表示为可执行的"><a href="#在Linux中第1、4、7表示读权限，第2、5、8表示为写，第3、6、9表示为可执行的" class="headerlink" title="在Linux中第1、4、7表示读权限，第2、5、8表示为写，第3、6、9表示为可执行的"></a>在Linux中第1、4、7表示读权限，第2、5、8表示为写，第3、6、9表示为可执行的</h2><blockquote>
+<p>修改文件属性           7    7    0</p>
+</blockquote>
+<h3 id="1、chgrp-更改文件属性"><a href="#1、chgrp-更改文件属性" class="headerlink" title="1、chgrp:更改文件属性"></a>1、chgrp:更改文件属性</h3><h3 id="2、chown-更改文件属主"><a href="#2、chown-更改文件属主" class="headerlink" title="2、chown:更改文件属主"></a>2、chown:更改文件属主</h3><h3 id="3、chmod-更改文件9个属性"><a href="#3、chmod-更改文件9个属性" class="headerlink" title="3、chmod:更改文件9个属性"></a>3、chmod:更改文件9个属性</h3><h4 id="一般都是用更改问价属性多"><a href="#一般都是用更改问价属性多" class="headerlink" title="一般都是用更改问价属性多"></a>一般都是用更改问价属性多</h4><p><strong>chomd  777 filename</strong> </p>
+<p>修改后，权限发生了改变</p>
+<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210323212741830.png" alt="image-20210323212741830"> </p>
+<h2 id="文件内容查看"><a href="#文件内容查看" class="headerlink" title="文件内容查看"></a>文件内容查看</h2><ul>
+<li><strong>cat表示开始显示文件内容</strong></li>
+<li><strong>tac表示从末尾开始显示内容</strong></li>
+<li><strong>nl表示将文件输出行号</strong></li>
+<li><strong>more从前往后 一页一页的显示内容</strong></li>
+<li><strong>less表示可以从前往后也可以从后往前一页一页的显示内容</strong></li>
+<li><strong>head只显示头几行</strong></li>
+<li><strong>tail只显示末尾几行</strong></li>
+</ul>
+<h3 id="例如：-cat-文件名"><a href="#例如：-cat-文件名" class="headerlink" title="例如： cat  文件名"></a>例如： cat  文件名</h3></details>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/20/Linux%E5%9F%BA%E6%9C%AC%E5%91%BD%E4%BB%A4/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-shior" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/20/shior/">shior</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/20/shior/" class="archive-article-date">
+  	<time datetime="2021-04-20T10:02:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <details>
+
+<h1 id="shior"><a href="#shior" class="headerlink" title="shior"></a>shior</h1><h3 id="使用shior的好处："><a href="#使用shior的好处：" class="headerlink" title="使用shior的好处："></a>使用shior的好处：</h3><h4 id="认证，授权，加密，会话管理"><a href="#认证，授权，加密，会话管理" class="headerlink" title="认证，授权，加密，会话管理"></a>认证，授权，加密，会话管理</h4><h3 id="remeber-me-记住我-功能相当于一个session"><a href="#remeber-me-记住我-功能相当于一个session" class="headerlink" title="remeber me(记住我) 功能相当于一个session"></a>remeber me(记住我) 功能相当于一个session</h3><h3 id="Shiro的架构有3个主要的概念：Subject，SecurityManager-和-Realm"><a href="#Shiro的架构有3个主要的概念：Subject，SecurityManager-和-Realm" class="headerlink" title="Shiro的架构有3个主要的概念：Subject，SecurityManager 和 Realm"></a>Shiro的架构有3个主要的概念：Subject，SecurityManager 和 Realm</h3><p><img src="https://pic4.zhimg.com/80/v2-a6556dacd3f54be22f0573e8fa75399b_720w.jpg" alt="img"></p>
+<h4 id="Subject-即“表示当前操作用户”"><a href="#Subject-即“表示当前操作用户”" class="headerlink" title="Subject:即“表示当前操作用户”"></a>Subject:即“表示当前操作用户”</h4><h5 id="依赖"><a href="#依赖" class="headerlink" title="依赖"></a>依赖</h5><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.apache.shiro<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>shiro-spring<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">version</span>&gt;</span>1.4.1<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="使用shiro功能，我们首先要创建Realm对象"><a href="#使用shiro功能，我们首先要创建Realm对象" class="headerlink" title="使用shiro功能，我们首先要创建Realm对象"></a>使用shiro功能，我们首先要创建Realm对象</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">UserRealm</span> <span class="keyword">extends</span> <span class="title">AuthorizingRealm</span> </span>&#123;  <span class="comment">//继承AuthorizingRealm对象</span></span><br><span class="line">    <span class="comment">//授权</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> AuthorizationInfo <span class="title">doGetAuthorizationInfo</span><span class="params">(PrincipalCollection principalCollection)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;执行了doGetAuthorizationInfo&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//认证</span></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">protected</span> AuthenticationInfo <span class="title">doGetAuthenticationInfo</span><span class="params">(AuthenticationToken token)</span> <span class="keyword">throws</span> AuthenticationException </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;执行了doGetAuthenticationInfo&quot;</span>);</span><br><span class="line">        <span class="comment">//设置用户名和密码</span></span><br><span class="line">        String name=<span class="string">&quot;root&quot;</span>;</span><br><span class="line">        String password=<span class="string">&quot;root&quot;</span>;</span><br><span class="line">        UsernamePasswordToken passwordToken = (UsernamePasswordToken) token ;</span><br><span class="line">        <span class="keyword">if</span> (!passwordToken.getUsername().equals(name))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">//密码认证shrio做</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> SimpleAuthenticationInfo(<span class="string">&quot;&quot;</span>,password,<span class="string">&quot;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ShiroConfig</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="comment">//3.ShiroFilterFactoryBean</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> ShiroFilterFactoryBean <span class="title">shiroFilterFactoryBean</span><span class="params">(<span class="meta">@Qualifier(&quot;defaultWebSecurityManager&quot;)</span> DefaultWebSecurityManager defaultWebSecurityManager)</span></span>&#123;</span><br><span class="line">        ShiroFilterFactoryBean shiroFilterFactoryBean = <span class="keyword">new</span> ShiroFilterFactoryBean();</span><br><span class="line">        shiroFilterFactoryBean.setSecurityManager(defaultWebSecurityManager);</span><br><span class="line">        LinkedHashMap&lt;String, String&gt; filter = <span class="keyword">new</span> LinkedHashMap&lt;&gt;();</span><br><span class="line">        <span class="comment">//添加Shiro过滤器</span></span><br><span class="line">        <span class="comment">/*</span></span><br><span class="line"><span class="comment">        * authc 必须认证才能访问</span></span><br><span class="line"><span class="comment">        * anon 无须认证就能访问</span></span><br><span class="line"><span class="comment">        * user 必须记住我 才能使用</span></span><br><span class="line"><span class="comment">        * role 拥有某个角色才能访问</span></span><br><span class="line"><span class="comment">        * perms 针对某个资源进行访问</span></span><br><span class="line"><span class="comment">        *</span></span><br><span class="line"><span class="comment">        * */</span></span><br><span class="line">        filter.put(<span class="string">&quot;/User/*&quot;</span>,<span class="string">&quot;authc&quot;</span>);</span><br><span class="line">        shiroFilterFactoryBean.setFilterChainDefinitionMap(filter);</span><br><span class="line"></span><br><span class="line">        <span class="comment">//设置登录的请求</span></span><br><span class="line">       shiroFilterFactoryBean.setLoginUrl(<span class="string">&quot;/User/login&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> shiroFilterFactoryBean;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2.DufaltRealmSercuryManger</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> DefaultWebSecurityManager <span class="title">defaultWebSecurityManager</span><span class="params">(<span class="meta">@Qualifier(&quot;userRealm&quot;)</span> UserRealm userRealm)</span></span>&#123;</span><br><span class="line">        DefaultWebSecurityManager SecurityManager = <span class="keyword">new</span> DefaultWebSecurityManager();</span><br><span class="line">        SecurityManager.setRealm(userRealm);</span><br><span class="line">        <span class="keyword">return</span> SecurityManager;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//1、创建Realm对象，需要自定义</span></span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> UserRealm <span class="title">userRealm</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> UserRealm();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RequestMapping(&quot;login&quot;)</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">login</span><span class="params">(String username,String password,Model model)</span></span>&#123;</span><br><span class="line">      <span class="comment">//获取当前用户</span></span><br><span class="line">      Subject subject = SecurityUtils.getSubject();</span><br><span class="line">      <span class="comment">//封装用户数据</span></span><br><span class="line">      UsernamePasswordToken token = <span class="keyword">new</span> UsernamePasswordToken(username,password);</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">          subject.login(token); <span class="comment">//判断用户名是否异常,没有异常就说明ok</span></span><br><span class="line">          <span class="keyword">return</span> <span class="string">&quot;index&quot;</span>;</span><br><span class="line">      &#125; <span class="keyword">catch</span> (UnknownAccountException e) &#123;</span><br><span class="line">          model.addAttribute(<span class="string">&quot;msg&quot;</span>,<span class="string">&quot;用户名不一致&quot;</span>);</span><br><span class="line">          <span class="keyword">return</span> <span class="string">&quot;login&quot;</span>;</span><br><span class="line">      &#125;<span class="keyword">catch</span> (IncorrectCredentialsException e) &#123;    <span class="comment">//密码不一致异常</span></span><br><span class="line">          model.addAttribute(<span class="string">&quot;msg&quot;</span>,<span class="string">&quot;密码不一致&quot;</span>);</span><br><span class="line">          <span class="keyword">return</span> <span class="string">&quot;login&quot;</span>;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/20/shior/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-开始定时任务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/20/%E5%BC%80%E5%A7%8B%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">开始定时任务</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/20/%E5%BC%80%E5%A7%8B%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/" class="archive-article-date">
+  	<time datetime="2021-04-20T10:02:18.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <details>
+    ## 开启定时任务
+
+<h4 id="一、在主程序类中添加-EnableScheduling-开启定时执行任务"><a href="#一、在主程序类中添加-EnableScheduling-开启定时执行任务" class="headerlink" title="一、在主程序类中添加@EnableScheduling //开启定时执行任务"></a>一、在主程序类中添加@EnableScheduling //开启定时执行任务</h4><p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210322141418650.png" alt="image-20210322141418650"></p>
+<h4 id="二、在业务层中创建一个业务类"><a href="#二、在业务层中创建一个业务类" class="headerlink" title="二、在业务层中创建一个业务类"></a>二、在业务层中创建一个业务类</h4><p>在方法上添加一个@Scheduled注解，就可以开启定时任务</p>
+<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210322141602758.png" alt="image-20210322141602758"></p>
+</details>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/20/%E5%BC%80%E5%A7%8B%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-异步处理" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/20/%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/">异步处理</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/20/%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/" class="archive-article-date">
+  	<time datetime="2021-04-20T10:01:52.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <details>
+    ## 异步处理
+
+<h3 id="一、首先要开启异步处理"><a href="#一、首先要开启异步处理" class="headerlink" title="一、首先要开启异步处理"></a>一、首先要开启异步处理</h3><h4 id="1、在主程序类中添加异步任务注解"><a href="#1、在主程序类中添加异步任务注解" class="headerlink" title="1、在主程序类中添加异步任务注解"></a>1、在主程序类中添加异步任务注解</h4><p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210322135036387.png" alt="image-20210322135036387"></p>
+<h4 id="2-在方法上添加一个-Async注解即可使用"><a href="#2-在方法上添加一个-Async注解即可使用" class="headerlink" title="2.在方法上添加一个@Async注解即可使用"></a>2.在方法上添加一个@Async注解即可使用</h4><p>@Async注解一加上多线程就会无效</p>
+<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210322135338674.png" alt="image-20210322135338674"></p>
+<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210322135623173.png" alt="image-20210322135623173"></p>
+</details>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/20/%E5%BC%82%E6%AD%A5%E5%A4%84%E7%90%86/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+    <article id="post-swagger-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2021/04/20/swagger-1/">swagger</a>
+    </h1>
+  
+
+        
+        <a href="/2021/04/20/swagger-1/" class="archive-article-date">
+  	<time datetime="2021-04-20T09:53:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-04-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <details>
+    ### 前后端分离
+
+<h4 id="1、前段—-gt-前端控制层、视图层"><a href="#1、前段—-gt-前端控制层、视图层" class="headerlink" title="1、前段—&gt;前端控制层、视图层"></a>1、前段—&gt;前端控制层、视图层</h4><h4 id="2、后端—-gt-后端控制层、业务层、数据访问层"><a href="#2、后端—-gt-后端控制层、业务层、数据访问层" class="headerlink" title="2、后端—-&gt;后端控制层、业务层、数据访问层"></a>2、后端—-&gt;后端控制层、业务层、数据访问层</h4><h4 id="3、前后端通过API进行交互"><a href="#3、前后端通过API进行交互" class="headerlink" title="3、前后端通过API进行交互"></a>3、前后端通过API进行交互</h4><h4 id="4、前后端相对独立松耦合、也降低了集成风险"><a href="#4、前后端相对独立松耦合、也降低了集成风险" class="headerlink" title="4、前后端相对独立松耦合、也降低了集成风险"></a>4、前后端相对独立松耦合、也降低了集成风险</h4><h2 id="好处"><a href="#好处" class="headerlink" title="好处"></a>好处</h2><h4 id="1、是世界上最流行的API框架"><a href="#1、是世界上最流行的API框架" class="headerlink" title="1、是世界上最流行的API框架"></a>1、是世界上最流行的API框架</h4><h4 id="2、Restful-APi文档自动生成"><a href="#2、Restful-APi文档自动生成" class="headerlink" title="2、Restful APi文档自动生成"></a>2、Restful APi文档自动生成</h4><h4 id="3、直接运行，在线测试Api"><a href="#3、直接运行，在线测试Api" class="headerlink" title="3、直接运行，在线测试Api"></a>3、直接运行，在线测试Api</h4><h4 id="4、支持多种语言"><a href="#4、支持多种语言" class="headerlink" title="4、支持多种语言"></a>4、支持多种语言</h4><h2 id="使用Swagger"><a href="#使用Swagger" class="headerlink" title="使用Swagger"></a>使用Swagger</h2><h4 id="第一步导入依赖"><a href="#第一步导入依赖" class="headerlink" title="第一步导入依赖"></a>第一步导入依赖</h4><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger-ui<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">dependency</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>io.springfox<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>springfox-swagger2<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>2.7.0<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="第二步使用前，要先配置一个配置类"><a href="#第二步使用前，要先配置一个配置类" class="headerlink" title="第二步使用前，要先配置一个配置类"></a>第二步使用前，要先配置一个配置类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="meta">@EnableSwagger2</span>  <span class="comment">//自动开启Swagger</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwaggerConfig</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">    <span class="meta">@Bean</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Docket <span class="title">docket</span><span class="params">()</span></span>&#123;<span class="comment">//swagger的bean是通过Docket来实例的</span></span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())</span><br><span class="line">                <span class="comment">//.enable(false)</span></span><br><span class="line">                .select()</span><br><span class="line">                <span class="comment">/*</span></span><br><span class="line"><span class="comment">                * RequestHandlerSelectors: 需要扫描的接口方式</span></span><br><span class="line"><span class="comment">                * basePackage：需要扫描的包</span></span><br><span class="line"><span class="comment">                * any:扫描全部的包</span></span><br><span class="line"><span class="comment">                * none:不扫描包</span></span><br><span class="line"><span class="comment">                *</span></span><br><span class="line"><span class="comment">                * */</span></span><br><span class="line">                <span class="comment">//扫描指定的包</span></span><br><span class="line">                .apis(RequestHandlerSelectors.basePackage(<span class="string">&quot;com.gwg.helloswagger.controller&quot;</span>))</span><br><span class="line">               <span class="comment">//过滤指定的路径</span></span><br><span class="line">                <span class="comment">//.paths(PathSelectors.ant(&quot;/gwg/**&quot;))</span></span><br><span class="line">                .build();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> ApiInfo <span class="title">apiInfo</span><span class="params">()</span></span>&#123;<span class="comment">//配置文档信息</span></span><br><span class="line">        Contact contact = <span class="keyword">new</span> Contact(<span class="string">&quot;小生&quot;</span>, <span class="string">&quot;https://www.guowenguang.github.io.com&quot;</span>, <span class="string">&quot;2353467122@qq.com&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> ApiInfo(<span class="string">&quot;小生的Swagger&quot;</span>,</span><br><span class="line">                <span class="string">&quot;即使再小的帆也能远航&quot;</span>,</span><br><span class="line">                <span class="string">&quot;v1.0&quot;</span>, <span class="string">&quot;https://www.guowenguang.github.io.com&quot;</span>, contact,</span><br><span class="line">                <span class="string">&quot;Apache 2.0&quot;</span>,</span><br><span class="line">                <span class="string">&quot;http://www.apache.org/licenses/LICENSE-2.0&quot;</span>, <span class="keyword">new</span> ArrayList());</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="第三步-写一个controller层"><a href="#第三步-写一个controller层" class="headerlink" title="第三步:写一个controller层"></a>第三步:写一个controller层</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@RestController</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SwaggerController</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@GetMapping(value = &quot;/hello&quot;)</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">index</span><span class="params">()</span></span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="string">&quot;hello,swagger&quot;</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="第四布：启动tomcat在浏览器打开http-localhost-8080-swagger-ui-html"><a href="#第四布：启动tomcat在浏览器打开http-localhost-8080-swagger-ui-html" class="headerlink" title="第四布：启动tomcat在浏览器打开http://localhost:8080/swagger-ui.html"></a>第四布：启动tomcat在浏览器打开<a target="_blank" rel="noopener" href="http://localhost:8080/swagger-ui.html">http://localhost:8080/swagger-ui.html</a></h4><p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210321202529006.png" alt="image-20210321202529006"></p>
+<h4 id="enable-false-表示关闭swagger"><a href="#enable-false-表示关闭swagger" class="headerlink" title="enable(false)表示关闭swagger"></a>enable(false)表示关闭swagger</h4><h4 id="在正式发布项目的时候要关闭swagger，保证代码安全和减少运行内存"><a href="#在正式发布项目的时候要关闭swagger，保证代码安全和减少运行内存" class="headerlink" title="在正式发布项目的时候要关闭swagger，保证代码安全和减少运行内存"></a>在正式发布项目的时候要关闭swagger，保证代码安全和减少运行内存</h4><p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210321195301332.png" alt="image-20210321195301332"></p>
+<h2 id=""><a href="#" class="headerlink" title=""></a></h2><h2 id="配置Api分组"><a href="#配置Api分组" class="headerlink" title="配置Api分组"></a>配置Api分组</h2><h4 id="1、如果没有配置分组，默认是default，通过groupname-方法来进行配置分组"><a href="#1、如果没有配置分组，默认是default，通过groupname-方法来进行配置分组" class="headerlink" title="1、如果没有配置分组，默认是default，通过groupname()方法来进行配置分组"></a>1、如果没有配置分组，默认是default，通过groupname()方法来进行配置分组</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Bean</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Docket <span class="title">docket1</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="comment">//enable(false) 表示关闭swagger</span></span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())</span><br><span class="line">               .groupName(<span class="string">&quot;A&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="meta">@Bean</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Docket <span class="title">docket2</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="comment">//enable(false) 表示关闭swagger</span></span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())</span><br><span class="line">               .groupName(<span class="string">&quot;B&quot;</span>);</span><br><span class="line">   &#125;</span><br><span class="line">   <span class="meta">@Bean</span></span><br><span class="line">   <span class="function"><span class="keyword">public</span> Docket <span class="title">docket3</span><span class="params">()</span></span>&#123;</span><br><span class="line">       <span class="comment">//enable(false) 表示关闭swagger</span></span><br><span class="line">       <span class="keyword">return</span> <span class="keyword">new</span> Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo())</span><br><span class="line">               .groupName(<span class="string">&quot;C&quot;</span>);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="运行后的结果"><a href="#运行后的结果" class="headerlink" title="运行后的结果"></a>运行后的结果</h3><h4 id="配置Api分组的好处可以任务分配，使前端更清楚的看到后端的接口"><a href="#配置Api分组的好处可以任务分配，使前端更清楚的看到后端的接口" class="headerlink" title="配置Api分组的好处可以任务分配，使前端更清楚的看到后端的接口"></a>配置Api分组的好处可以任务分配，使前端更清楚的看到后端的接口</h4><p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210321203435858.png" alt="image-20210321203435858"></p>
+<h3 id="实体配置"><a href="#实体配置" class="headerlink" title="实体配置"></a>实体配置</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ApiModel(&quot;用户实体类&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">User</span> </span>&#123;</span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;用户名&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String name;</span><br><span class="line">    <span class="meta">@ApiModelProperty(&quot;密码&quot;)</span></span><br><span class="line">    <span class="keyword">private</span> String password;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@ApiOperation(value = &quot;小生的接口&quot;)</span></span><br><span class="line"><span class="meta">@PostMapping(value = &quot;/user&quot;)</span></span><br><span class="line"><span class="meta">@ResponseBody</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> String <span class="title">user</span><span class="params">(<span class="meta">@ApiParam(value = &quot;这个表示用户名&quot;)</span>String name)</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> name;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\image-20210321204536548.png" alt="image-20210321204536548"></p>
+<h2 id="Swagger的简单配置"><a href="#Swagger的简单配置" class="headerlink" title="Swagger的简单配置"></a>Swagger的简单配置</h2><table>
+<thead>
+<tr>
+<th>@Api(tags = “xxx模块说明”)</th>
+<th>作用在模块类上</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>@ApiOperation(“xxx接口说明”)</td>
+<td>作用在接口方法上</td>
+</tr>
+<tr>
+<td>@ApiModel(“xxxPOJO说明”)</td>
+<td>作用在模型类上：如VO、BO</td>
+</tr>
+<tr>
+<td>@ApiModelProperty(value = “xxx属性说明”,hidden = true)</td>
+<td>作用在类方法和属性上，hidden设置为true可以隐藏该属性</td>
+</tr>
+<tr>
+<td>@ApiParam(“xxx参数说明”)</td>
+<td>作用在参数、方法和字段上，类似@ApiModelProperty</td>
+</tr>
+</tbody></table>
+</details>
+
+
+
+<h3 id="-1"><a href="#-1" class="headerlink" title=""></a></h3>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2021/04/20/swagger-1/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
     <article id="post-MVC思想和Dao层" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -626,75 +1059,10 @@
 
 
   
-    <article id="post-java知识点" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/12/12/java%E7%9F%A5%E8%AF%86%E7%82%B9/">java知识点</a>
-    </h1>
-  
-
-        
-        <a href="/2020/12/12/java%E7%9F%A5%E8%AF%86%E7%82%B9/" class="archive-article-date">
-  	<time datetime="2020-12-12T05:24:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-12-12</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <details>
-
-<summary>Java基础</summary>
-
-<h3 id="1、Java环境变量"><a href="#1、Java环境变量" class="headerlink" title="1、Java环境变量"></a>1、Java环境变量</h3><h4 id="1-1、想要Java编译和运行，必须在电脑的环境变量中填以下信息。"><a href="#1-1、想要Java编译和运行，必须在电脑的环境变量中填以下信息。" class="headerlink" title="1.1、想要Java编译和运行，必须在电脑的环境变量中填以下信息。"></a>1.1、想要Java编译和运行，必须在电脑的环境变量中填以下信息。</h4><h5 id="classpath-E-Java-jdk1-8-0-221-lib"><a href="#classpath-E-Java-jdk1-8-0-221-lib" class="headerlink" title="classpath:  .,E:\Java\jdk1.8.0_221\lib"></a>classpath:  .,E:\Java\jdk1.8.0_221\lib</h5><h5 id="path-E-Java-jdk1-8-0-221-bin"><a href="#path-E-Java-jdk1-8-0-221-bin" class="headerlink" title="path: E:\Java\jdk1.8.0_221\bin"></a>path: E:\Java\jdk1.8.0_221\bin</h5><h5 id="JAVA-HOME-E-Java-jdk1-8-0-221"><a href="#JAVA-HOME-E-Java-jdk1-8-0-221" class="headerlink" title="JAVA_HOME:E:\Java\jdk1.8.0_221"></a>JAVA_HOME:E:\Java\jdk1.8.0_221</h5><h4 id=""><a href="#" class="headerlink" title=""></a></h4><h4 id="1-2、如果跟以下图一样就说明Java配置成功了！"><a href="#1-2、如果跟以下图一样就说明Java配置成功了！" class="headerlink" title="1.2、如果跟以下图一样就说明Java配置成功了！"></a>1.2、如果跟以下图一样就说明Java配置成功了！</h4><p><img src="https://images2015.cnblogs.com/blog/805379/201605/805379-20160512225343452-1007903408.png" alt="img"></p>
-<p><img src="https://images2015.cnblogs.com/blog/805379/201605/805379-20160512225445859-652093728.png" alt="img"></p>
-<h3 id="2、Java语言基础"><a href="#2、Java语言基础" class="headerlink" title="2、Java语言基础"></a>2、Java语言基础</h3><h4 id="2-1、常用关键字有："><a href="#2-1、常用关键字有：" class="headerlink" title="2.1、常用关键字有："></a>2.1、常用关键字有：</h4><p><img src="https://img-blog.csdnimg.cn/20190407171115204.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3oxd2Vi,size_16,color_FFFFFF,t_70" alt="img"></p>
-<h3 id="3、面向对象"><a href="#3、面向对象" class="headerlink" title="3、面向对象"></a>3、面向对象</h3><h4 id="3-1、面向对象有三大特性-封装、继承、多态。"><a href="#3-1、面向对象有三大特性-封装、继承、多态。" class="headerlink" title="3.1、面向对象有三大特性:封装、继承、多态。"></a>3.1、面向对象有三大特性:封装、继承、多态。</h4><h5 id="封装-private-：将类的成员变量和成员方法都隐藏起来、不让外部直接访问；"><a href="#封装-private-：将类的成员变量和成员方法都隐藏起来、不让外部直接访问；" class="headerlink" title="封装( private )：将类的成员变量和成员方法都隐藏起来、不让外部直接访问；"></a>封装( private )：将类的成员变量和成员方法都隐藏起来、不让外部直接访问；</h5><h5 id="将类内部与外部交互的方法暴露出来，让方法来控制外部类中的成员变量和实现细节进行安全的访问和操作。"><a href="#将类内部与外部交互的方法暴露出来，让方法来控制外部类中的成员变量和实现细节进行安全的访问和操作。" class="headerlink" title="将类内部与外部交互的方法暴露出来，让方法来控制外部类中的成员变量和实现细节进行安全的访问和操作。"></a>将类内部与外部交互的方法暴露出来，让方法来控制外部类中的成员变量和实现细节进行安全的访问和操作。</h5><h5 id="继承（extends）：当子类继承父类要用extends关键字来继承父类的方法和属性，当父类的属性和方法带有private关键字的时候，子类不能继承。而父类不能继承子类的方法和属性"><a href="#继承（extends）：当子类继承父类要用extends关键字来继承父类的方法和属性，当父类的属性和方法带有private关键字的时候，子类不能继承。而父类不能继承子类的方法和属性" class="headerlink" title="继承（extends）：当子类继承父类要用extends关键字来继承父类的方法和属性，当父类的属性和方法带有private关键字的时候，子类不能继承。而父类不能继承子类的方法和属性"></a>继承（extends）：当子类继承父类要用extends关键字来继承父类的方法和属性，当父类的属性和方法带有private关键字的时候，子类不能继承。而父类不能继承子类的方法和属性</h5><h5 id="多态：多态是同一个行为具有多个不同表现形式或形态的能力。多态就是同一个接口，使用不同的实例而执行不同操作"><a href="#多态：多态是同一个行为具有多个不同表现形式或形态的能力。多态就是同一个接口，使用不同的实例而执行不同操作" class="headerlink" title="多态：多态是同一个行为具有多个不同表现形式或形态的能力。多态就是同一个接口，使用不同的实例而执行不同操作"></a>多态：多态是同一个行为具有多个不同表现形式或形态的能力。多态就是同一个接口，使用不同的实例而执行不同操作</h5><p>​            <img src="https://www.runoob.com/wp-content/uploads/2013/12/java-polymorphism-111.png" alt="img"></p>
-<h4 id="3-2、多态的特点：-1、能解藕-2、可扩充的-3、接口性-4、灵活性-5、替换性"><a href="#3-2、多态的特点：-1、能解藕-2、可扩充的-3、接口性-4、灵活性-5、替换性" class="headerlink" title="3.2、多态的特点：  1、能解藕    2、可扩充的     3、接口性   4、灵活性    5、替换性"></a>3.2、多态的特点：  1、能解藕    2、可扩充的     3、接口性   4、灵活性    5、替换性</h4><h4 id="3-3、多态存在的三个表现"><a href="#3-3、多态存在的三个表现" class="headerlink" title="3.3、多态存在的三个表现"></a>3.3、多态存在的三个表现</h4><h5 id="1、继承"><a href="#1、继承" class="headerlink" title="1、继承"></a>1、继承</h5><h5 id="2、重写"><a href="#2、重写" class="headerlink" title="2、重写"></a>2、重写</h5><h5 id="3、父类指向子类-Parent-p-new-Son"><a href="#3、父类指向子类-Parent-p-new-Son" class="headerlink" title="3、父类指向子类        Parent p  = new Son();"></a>3、父类指向子类        Parent p  = new Son();</h5></details>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/12/12/java%E7%9F%A5%E8%AF%86%E7%82%B9/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &amp;raquo;</a>
+    </nav>
   
 
 
@@ -705,7 +1073,7 @@
   <div class="outer">
     <div id="footer-info">
     	<div class="footer-left">
-    		&copy; 2020 小郭
+    		&copy; 2021 小郭
     	</div>
       	<div class="footer-right">
       		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
